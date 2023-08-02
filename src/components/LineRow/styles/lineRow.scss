@@ -1,0 +1,12 @@
+.linerow {
+  display: flex;
+  flex-direction: row;
+
+  &__number {
+    margin-right: 15px;
+  }
+
+  &__arrow {
+    margin-right: 15px;
+  }
+}

@@ -1,0 +1,22 @@
+@import "../../../style/colors";
+
+.mainfunction {
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    &__header {
+      &__part {
+        &--one {
+          color: $symbol-blue;
+        }
+        &--two {
+          color: $text-green;
+        }
+        &--symbol {
+          color: $symbol-orange;
+        }
+      }
+    }
+  }
+}
