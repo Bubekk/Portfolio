@@ -1,12 +1,11 @@
 import "./App.css";
-import LineRow from "./components/LineRow/LineRow";
-import MainFunction from "./components/Main/MainFunction";
+import LineRowColumn from "./components/LineRowColumn/LineRowColumn";
+import MainFunction from "./Main/MainFunction";
 
 function App() {
   return (
     <>
-      <LineRow number="1" content="first" />
-      <LineRow number="2" content="mainfunction" />
+      <LineRowColumn />
     </>
   );
 }

@@ -1,0 +1,14 @@
+.lines {
+  display: flex;
+  flex-direction: column;
+
+  &__import {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__mainfunction {
+    display: flex;
+    flex-direction: row;
+  }
+}
