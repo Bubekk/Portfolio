@@ -1,0 +1,28 @@
+@use "../../style/colors";
+
+.object {
+  &__bracket {
+    margin-left: 60px;
+    color: colors.$symbol-blue;
+    //   &--close {
+    //   }
+  }
+  &__prop {
+    &--name {
+      margin-left: 80px;
+      color: colors.$object-name;
+    }
+    &--id {
+      color: colors.$symbol-purple;
+    }
+    &--date {
+      color: colors.$text-gray;
+    }
+    &--title {
+      color: colors.$text-yellow;
+    }
+    &--objective {
+      color: colors.$text-yellow;
+    }
+  }
+}

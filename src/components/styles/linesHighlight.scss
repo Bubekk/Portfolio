@@ -1,9 +1,0 @@
-.line-highlight {
-  display: flex;
-  flex-direction: row;
-  transition: background-color 0.1s ease-in-out;
-}
-
-.line-highlight.highlighted {
-  background-color: rgba(240, 240, 240, 0.3);
-}

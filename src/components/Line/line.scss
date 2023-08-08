@@ -1,0 +1,12 @@
+.line {
+  &__number {
+    color: #5b6177;
+    margin-right: 30px;
+    text-align: right;
+    width: 30px;
+  }
+
+  &__text {
+    margin: 0;
+  }
+}

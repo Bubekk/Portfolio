@@ -1,0 +1,28 @@
+@use "../../style/colors";
+
+.main-function {
+  &__text {
+    &--one {
+      color: colors.$text-blue;
+    }
+    &--two {
+      color: colors.$text-green;
+    }
+    &--bracket {
+      color: colors.$symbol-orange;
+    }
+    &--four {
+      margin-left: 20px;
+      color: colors.$text-blue;
+    }
+    &--parenthesis {
+      color: colors.$symbol-blue;
+      &--close {
+        margin-left: 20px;
+      }
+    }
+    &--comment {
+      color: colors.$comment;
+    }
+  }
+}

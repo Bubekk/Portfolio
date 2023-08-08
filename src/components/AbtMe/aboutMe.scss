@@ -1,0 +1,34 @@
+@use "../../style/colors";
+
+.abt-me {
+  &__text {
+    &--one {
+      margin-left: 40px;
+      color: colors.$text-blue;
+    }
+    &--two {
+      color: colors.$text-green;
+    }
+    &--three {
+      color: colors.$text-gray;
+    }
+    &--four {
+      color: colors.$symbol-blue;
+    }
+    &--five {
+      color: colors.$symbol-purple;
+    }
+    &--bracket {
+      color: colors.$symbol-orange;
+      &--close {
+        margin-left: 40px;
+      }
+    }
+  }
+  &__content {
+    &__text {
+      color: colors.$text-gray;
+      margin-left: 60px;
+    }
+  }
+}

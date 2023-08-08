@@ -1,0 +1,19 @@
+@use "../../style/colors";
+
+.line__highlight {
+  display: flex;
+  flex-direction: row;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.line__highlight.highlighted {
+  background-color: colors.$bg-highlight;
+}
+
+.line__number {
+  transition: color 0.1s ease-in-out;
+}
+
+.line__number.highlighted-number {
+  color: colors.$number;
+}
