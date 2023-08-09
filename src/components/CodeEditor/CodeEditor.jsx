@@ -1,4 +1,4 @@
-import "../MainFunction/mainFunction.scss";
+import "./codeEditor.scss";
 import NavBar from "../NavBar/NavBar";
 import Line from "../Line/Line";
 import AboutMe from "../AbtMe/AboutMe";
