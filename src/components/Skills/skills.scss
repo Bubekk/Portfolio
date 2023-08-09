@@ -1,0 +1,34 @@
+@use "../../style/colors";
+
+.skills {
+  &__text {
+    &--one {
+      margin-left: 40px;
+      color: colors.$text-blue;
+    }
+    &--two {
+      color: colors.$text-violet;
+    }
+    &--three {
+      color: colors.$text-gray;
+    }
+    &--bracket {
+      color: colors.$symbol-blue;
+      &--close {
+        margin-left: 40px;
+      }
+    }
+  }
+  &__learned {
+    &--one {
+      margin-left: 60px;
+      color: colors.$object-name;
+    }
+  }
+  &__learning {
+    &--one {
+      margin-left: 60px;
+      color: colors.$object-name;
+    }
+  }
+}

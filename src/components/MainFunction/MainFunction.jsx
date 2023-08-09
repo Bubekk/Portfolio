@@ -2,6 +2,8 @@ import "../MainFunction/mainFunction.scss";
 import Line from "../Line/Line";
 import AboutMe from "../AbtMe/AboutMe";
 import Education from "../Education/Education";
+import Experience from "../Experience/Experience";
+import Skills from "../Skills/Skills";
 
 function MainFunction(props) {
   return (
@@ -26,6 +28,8 @@ function MainFunction(props) {
       </Line>
       <AboutMe />
       <Education />
+      <Experience />
+      <Skills />
       <Line number={0}>
         <span className="main-function__text main-function__text main-function__text--parenthesis main-function__text--parenthesis--close">
           &#41;

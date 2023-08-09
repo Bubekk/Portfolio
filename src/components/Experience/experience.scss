@@ -1,0 +1,22 @@
+@use "../../style/colors";
+
+.experience {
+  &__text {
+    &--one {
+      margin-left: 40px;
+      color: colors.$text-blue;
+    }
+    &--two {
+      color: colors.$text-violet;
+    }
+    &--three {
+      color: colors.$text-gray;
+    }
+    &--square-bracket {
+      color: colors.$text-green;
+      &--close {
+        margin-left: 40px;
+      }
+    }
+  }
+}

@@ -2,7 +2,6 @@ import "./object.scss";
 import Line from "../Line/Line";
 
 function Object(props) {
-  const objectwo = [{}];
   return (
     <div className="object">
       <Line number={props.bracketOpen}>
@@ -25,7 +24,7 @@ function Object(props) {
         <span className="object__prop object__prop--objective">{props.objective}</span>
       </Line>
       <Line number={props.bracketClose}>
-        <span className="object__bracket object__bracket--close">&#125;</span> {props.coma ? <span>&#44;</span> : ""}
+        <span className="object__bracket object__bracket--close">&#125;</span> {props.comma ? <span>&#44;</span> : ""}
       </Line>
     </div>
   );

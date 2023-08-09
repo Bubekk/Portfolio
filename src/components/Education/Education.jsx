@@ -22,7 +22,7 @@ function Education(props) {
         objectiveNum={18}
         objective="objective1"
         bracketClose={19}
-        coma={true}
+        comma={true}
       />
       <Object
         bracketOpen={20}
@@ -35,7 +35,7 @@ function Education(props) {
         objectiveNum={24}
         objective="objective1"
         bracketClose={25}
-        coma={true}
+        comma={true}
       />
       <Object
         bracketOpen={26}
@@ -48,9 +48,9 @@ function Education(props) {
         objectiveNum={30}
         objective="objective1"
         bracketClose={31}
-        coma={false}
+        comma={false}
       />
-      <Line number={0}>
+      <Line number={32}>
         <span className="education__text education__text--square-bracket education__text--square-bracket--close">&#93;</span>
       </Line>
     </div>

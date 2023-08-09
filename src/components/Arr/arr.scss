@@ -1,0 +1,16 @@
+@use "../../style/colors";
+.arr {
+  display: inline;
+  &__text {
+    &--sq-bracket {
+      color: colors.$symbol-orange;
+    }
+    &--comma {
+      color: colors.$text-blue;
+    }
+  }
+  &__icon {
+    width: 32px;
+    height: 32px;
+  }
+}
