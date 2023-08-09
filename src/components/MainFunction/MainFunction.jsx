@@ -1,4 +1,5 @@
 import "../MainFunction/mainFunction.scss";
+import NavBar from "../NavBar/NavBar";
 import Line from "../Line/Line";
 import AboutMe from "../AbtMe/AboutMe";
 import Education from "../Education/Education";
@@ -8,6 +9,7 @@ import Skills from "../Skills/Skills";
 function MainFunction(props) {
   return (
     <div className="main-function">
+      <NavBar />
       <Line number={1}>
         <span className="main-function__text main-function__text--one">function </span>{" "}
         <span className="main-function__text main-function__text--two">SebastianKubanski()</span>{" "}

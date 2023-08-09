@@ -1,0 +1,23 @@
+@use "../../style/colors";
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 1.5rem;
+  background-color: colors.$nav-bg;
+  padding-left: 1rem;
+  &__filename {
+    color: colors.$nav-gray;
+    margin: 0;
+  }
+  &__btn {
+    color: colors.$nav-gray;
+    border: none;
+    background: none;
+    width: 50px;
+    &:hover {
+      color: white;
+      background-color: colors.$btn-highlight;
+    }
+  }
+}
