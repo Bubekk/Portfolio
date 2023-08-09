@@ -1,12 +1,12 @@
 import "./skills.scss";
 import Arr from "../Arr/Arr";
 import Line from "../Line/Line";
-import htmlIcon from "../../assets/icons/html.svg";
-import cssIcon from "../../assets/icons/css.svg";
-import jsIcon from "../../assets/icons/js.svg";
-import reactIcon from "../../assets/icons/react.svg";
-import vueIcon from "../../assets/icons/vue.svg";
-import pythonIcon from "../../assets/icons/python.svg";
+import htmlIcon from "../../../../assets/icons/html.svg";
+import cssIcon from "../../../../assets/icons/css.svg";
+import jsIcon from "../../../../assets/icons/js.svg";
+import reactIcon from "../../../../assets/icons/react.svg";
+import vueIcon from "../../../../assets/icons/vue.svg";
+import pythonIcon from "../../../../assets/icons/python.svg";
 
 function Skills(props) {
   return (

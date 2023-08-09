@@ -1,5 +1,5 @@
-import "../Line/line.scss";
-import "../Line/linesHighlight.scss";
+import "./line.scss";
+import "./linesHighlight.scss";
 import { useState } from "react";
 
 function Line({ number, children }) {

@@ -1,10 +1,10 @@
 import "./codeEditor.scss";
-import NavBar from "../NavBar/NavBar";
-import Line from "../Line/Line";
-import AboutMe from "../AbtMe/AboutMe";
-import Education from "../Education/Education";
-import Experience from "../Experience/Experience";
-import Skills from "../Skills/Skills";
+import NavBar from "./elements/NavBar/NavBar";
+import Line from "./elements/Line/Line";
+import AboutMe from "./elements/AbtMe/AboutMe";
+import Education from "./elements/Education/Education";
+import Experience from "./elements/Experience/Experience";
+import Skills from "./elements/Skills/Skills";
 
 function MainFunction(props) {
   return (
