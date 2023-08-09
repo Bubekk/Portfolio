@@ -1,28 +1,28 @@
-@use "../../style/colors";
+@use "../../style/cecolors";
 
 .main-function {
   &__text {
     &--one {
-      color: colors.$text-blue;
+      color: cecolors.$text-blue;
     }
     &--two {
-      color: colors.$text-green;
+      color: cecolors.$text-green;
     }
     &--bracket {
-      color: colors.$symbol-orange;
+      color: cecolors.$symbol-orange;
     }
     &--four {
       margin-left: 20px;
-      color: colors.$text-blue;
+      color: cecolors.$text-blue;
     }
     &--parenthesis {
-      color: colors.$symbol-blue;
+      color: cecolors.$symbol-blue;
       &--close {
         margin-left: 20px;
       }
     }
     &--comment {
-      color: colors.$comment;
+      color: cecolors.$comment;
     }
   }
 }

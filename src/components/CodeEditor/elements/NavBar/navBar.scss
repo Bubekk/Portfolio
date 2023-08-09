@@ -1,23 +1,23 @@
-@use "../../../../style/colors";
+@use "../../../../style/cecolors";
 .navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 1.5rem;
-  background-color: colors.$nav-bg;
+  background-color: cecolors.$nav-bg;
   padding-left: 1rem;
   &__filename {
-    color: colors.$nav-gray;
+    color: cecolors.$nav-gray;
     margin: 0;
   }
   &__btn {
-    color: colors.$nav-gray;
+    color: cecolors.$nav-gray;
     border: none;
     background: none;
     width: 50px;
     &:hover {
       color: white;
-      background-color: colors.$btn-highlight;
+      background-color: cecolors.$btn-highlight;
     }
   }
 }

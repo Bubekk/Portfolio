@@ -1,10 +1,12 @@
 import "./App.css";
 import CodeEditor from "./components/CodeEditor/CodeEditor";
+import Windows from "./components/Windows/Windows";
 
 function App() {
   return (
     <div className="main">
-      <CodeEditor />
+      <Windows />
+      {/* <CodeEditor /> */}
     </div>
   );
 }

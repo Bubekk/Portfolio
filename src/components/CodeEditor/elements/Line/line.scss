@@ -1,6 +1,8 @@
+@use "../../../../style/cecolors";
+
 .line {
   &__number {
-    color: #5b6177;
+    color: cecolors.$number;
     margin-right: 30px;
     text-align: right;
     width: 30px;

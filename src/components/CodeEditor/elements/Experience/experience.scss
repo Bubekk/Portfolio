@@ -1,19 +1,19 @@
-@use "../../../../style/colors";
+@use "../../../../style/cecolors";
 
 .experience {
   &__text {
     &--one {
       margin-left: 40px;
-      color: colors.$text-blue;
+      color: cecolors.$text-blue;
     }
     &--two {
-      color: colors.$text-violet;
+      color: cecolors.$text-violet;
     }
     &--three {
-      color: colors.$text-gray;
+      color: cecolors.$text-gray;
     }
     &--square-bracket {
-      color: colors.$text-green;
+      color: cecolors.$text-green;
       &--close {
         margin-left: 40px;
       }

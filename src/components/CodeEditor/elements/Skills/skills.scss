@@ -1,19 +1,19 @@
-@use "../../../../style/colors";
+@use "../../../../style/cecolors";
 
 .skills {
   &__text {
     &--one {
       margin-left: 40px;
-      color: colors.$text-blue;
+      color: cecolors.$text-blue;
     }
     &--two {
-      color: colors.$text-violet;
+      color: cecolors.$text-violet;
     }
     &--three {
-      color: colors.$text-gray;
+      color: cecolors.$text-gray;
     }
     &--bracket {
-      color: colors.$symbol-blue;
+      color: cecolors.$symbol-blue;
       &--close {
         margin-left: 40px;
       }
@@ -22,13 +22,13 @@
   &__learned {
     &--one {
       margin-left: 60px;
-      color: colors.$object-name;
+      color: cecolors.$object-name;
     }
   }
   &__learning {
     &--one {
       margin-left: 60px;
-      color: colors.$object-name;
+      color: cecolors.$object-name;
     }
   }
 }

@@ -1,28 +1,26 @@
-@use "../../../../style/colors";
+@use "../../../../style/cecolors";
 
 .object {
   &__bracket {
     margin-left: 60px;
-    color: colors.$symbol-blue;
-    //   &--close {
-    //   }
+    color: cecolors.$symbol-blue;
   }
   &__prop {
     &--name {
       margin-left: 80px;
-      color: colors.$object-name;
+      color: cecolors.$object-name;
     }
     &--id {
-      color: colors.$symbol-purple;
+      color: cecolors.$symbol-purple;
     }
     &--date {
-      color: colors.$text-gray;
+      color: cecolors.$text-gray;
     }
     &--title {
-      color: colors.$text-yellow;
+      color: cecolors.$text-yellow;
     }
     &--objective {
-      color: colors.$text-yellow;
+      color: cecolors.$text-yellow;
     }
   }
 }

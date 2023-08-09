@@ -1,25 +1,25 @@
-@use "../../../../style/colors";
+@use "../../../../style/cecolors";
 
 .abt-me {
   &__text {
     &--one {
       margin-left: 40px;
-      color: colors.$text-blue;
+      color: cecolors.$text-blue;
     }
     &--two {
-      color: colors.$text-green;
+      color: cecolors.$text-green;
     }
     &--three {
-      color: colors.$text-gray;
+      color: cecolors.$text-gray;
     }
     &--four {
-      color: colors.$symbol-blue;
+      color: cecolors.$symbol-blue;
     }
     &--five {
-      color: colors.$symbol-purple;
+      color: cecolors.$symbol-purple;
     }
     &--bracket {
-      color: colors.$symbol-orange;
+      color: cecolors.$symbol-orange;
       &--close {
         margin-left: 40px;
       }
@@ -27,7 +27,7 @@
   }
   &__content {
     &__text {
-      color: colors.$text-gray;
+      color: cecolors.$text-gray;
       margin-left: 60px;
     }
   }

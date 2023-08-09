@@ -1,4 +1,4 @@
-@use "../../../../style/colors";
+@use "../../../../style/cecolors";
 
 .line__highlight {
   display: flex;
@@ -7,7 +7,7 @@
 }
 
 .line__highlight.highlighted {
-  background-color: colors.$bg-highlight;
+  background-color: cecolors.$bg-highlight;
 }
 
 .line__number {
@@ -15,5 +15,5 @@
 }
 
 .line__number.highlighted-number {
-  color: colors.$number;
+  color: cecolors.$number-highlight;
 }

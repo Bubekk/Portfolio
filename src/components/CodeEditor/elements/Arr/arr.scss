@@ -1,12 +1,12 @@
-@use "../../../../style/colors";
+@use "../../../../style/cecolors";
 .arr {
   display: inline;
   &__text {
     &--sq-bracket {
-      color: colors.$symbol-orange;
+      color: cecolors.$symbol-orange;
     }
     &--comma {
-      color: colors.$text-blue;
+      color: cecolors.$text-blue;
     }
   }
   &__icon {
