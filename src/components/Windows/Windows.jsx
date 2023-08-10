@@ -2,7 +2,7 @@ import "./windows.scss";
 import Bar from "./elements/Bar/Bar";
 import StickyNote from "./elements/StickyNote/StickyNote";
 import FileLink from "./elements/FileLink/FileLink";
-import PdfWindow from "./elements/PdfWindow/PdfWindow";
+import PdfWindow from "./elements/ResumeWindow/ResumeWindow";
 
 function Windows(props) {
   return (
