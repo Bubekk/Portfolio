@@ -8,7 +8,7 @@ function FileLink(props) {
     props.handleCodeEditorLink(e);
   };
   return (
-    <button className="file-link" onClick={handleBtn}>
+    <button className="file-link" onDoubleClick={handleBtn}>
       <img className={`file-link__icon file-link__icon--${props.type}`} src={iconSrc} alt={props.alt} />
       <p className="file-link__file-name">{props.fileName}</p>
     </button>
@@ -16,3 +16,6 @@ function FileLink(props) {
 }
 
 export default FileLink;
+
+//<a href="https://www.flaticon.com/free-icons/pdf" title="pdf icons">Pdf icons created by inipagistudio - Flaticon</a> A pdf icon link
+//<a href="https://www.flaticon.com/free-icons/configuration" title="configuration icons">Configuration icons created by iconixar - Flaticon</a> A code icon link
