@@ -8,8 +8,8 @@ import Skills from "./elements/Skills/Skills";
 
 function MainFunction(props) {
   return (
-    <div className="main-function">
-      <NavBar />
+    <div className="main-function" style={props.style}>
+      <NavBar handleCodeEditorLink={props.handleCodeEditorLink} />
       <Line number={1}>
         <span className="main-function__text main-function__text--one">function </span>{" "}
         <span className="main-function__text main-function__text--two">SebastianKubanski()</span>{" "}
