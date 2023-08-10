@@ -1,0 +1,15 @@
+@use "../../../../style/wincolors";
+@use "../../../../style/fonts";
+.sticky-note {
+  width: 150px;
+  height: 150px;
+  background-color: wincolors.$win-sticky-note;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  &__text {
+    color: wincolors.$win-sticky-note-text;
+    font-family: fonts.$win-sticky-note-font;
+  }
+}
