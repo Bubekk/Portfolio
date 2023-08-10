@@ -5,7 +5,7 @@ import Windows from "./components/Windows/Windows";
 
 function App() {
   const [isCodeVisible, setIsCodeVisible] = useState(false);
-  const handleCodeEditorLink = (e) => {
+  const handleCodeEditorLink = () => {
     setIsCodeVisible(!isCodeVisible);
   };
   return (

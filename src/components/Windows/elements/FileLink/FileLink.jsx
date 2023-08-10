@@ -4,8 +4,8 @@ import CodeIcon from "../../../../assets/icons/code-icon.png";
 
 function FileLink(props) {
   const iconSrc = props.type === "pdf" ? PdfIcon : CodeIcon;
-  const handleBtn = (e) => {
-    props.handleCodeEditorLink(e);
+  const handleBtn = () => {
+    const link = props.type === "pdf" ? props.handleResumeLink() : props.handleCodeEditorLink();
   };
   return (
     <button className="file-link" onDoubleClick={handleBtn}>

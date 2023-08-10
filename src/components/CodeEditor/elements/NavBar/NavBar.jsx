@@ -1,8 +1,8 @@
 import "./navbar.scss";
 
 function NavBar(props) {
-  const handleBtn = (e) => {
-    props.handleCodeEditorLink(e);
+  const handleBtn = () => {
+    props.handleCodeEditorLink();
   };
   return (
     <nav className="navbar">
