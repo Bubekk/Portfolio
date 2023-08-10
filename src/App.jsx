@@ -7,7 +7,6 @@ function App() {
   const [isCodeVisible, setIsCodeVisible] = useState(false);
   const handleCodeEditorLink = (e) => {
     setIsCodeVisible(!isCodeVisible);
-    console.log(isCodeVisible);
   };
   return (
     <div className="main">
