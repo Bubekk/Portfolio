@@ -5,7 +5,7 @@ import Footer from "./Footer/Footer";
 
 function StartMenu(props) {
   return (
-    <div className="start-menu">
+    <div className="start-menu" style={props.style}>
       <nav className="start-menu__nav">
         <div className="start-menu__nav__avatar">
           <img src={Avatar} alt="" />
@@ -19,7 +19,7 @@ function StartMenu(props) {
         </div>
         <div className="start-menu__container__contact"></div>
       </div>
-      <Footer />
+      <Footer handleLogOff={props.handleLogOff} />
     </div>
   );
 }

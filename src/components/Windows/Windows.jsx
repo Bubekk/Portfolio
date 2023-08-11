@@ -8,10 +8,16 @@ import { useState } from "react";
 
 function Windows(props) {
   const [isResumeVisible, setIsResumeVisible] = useState(false);
+  const [isStartVisible, setIsStartVisible] = useState(false);
+
   const handleResumeLink = () => {
     setIsResumeVisible(!isResumeVisible);
-    console.log(isResumeVisible);
   };
+
+  const handleStartMenuBtn = () => {
+    setIsStartVisible(!isStartVisible);
+  };
+
   return (
     <div className="windows" style={props.style}>
       <div className="windows__screen">
@@ -24,9 +30,9 @@ function Windows(props) {
           <StickyNote color="red" text="Remember to click twice on icons. it's XP after all ;) " />
         </div>
         <ResumeWindow handleResumeLink={handleResumeLink} style={{ display: isResumeVisible ? "block" : "none" }} />
-        <StartMenu />
+        <StartMenu style={{ display: isStartVisible ? "block" : "none" }} handleLogOff={props.handleLogOff} />
       </div>
-      <Bar />
+      <Bar handleStartMenuBtn={handleStartMenuBtn} />
     </div>
   );
 }

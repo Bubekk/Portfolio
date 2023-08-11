@@ -27,11 +27,15 @@ function Bar(props) {
     });
   };
 
+  const handleStartClick = () => {
+    props.handleStartMenuBtn();
+  };
+
   return (
     <nav className="bar">
-      <div className="bar__start">
+      <button className="bar__start" onClick={handleStartClick}>
         <p className="bar__start__text">Start</p>
-      </div>
+      </button>
       <div className="bar__clock">
         <p className="bar__clock__text bar__clock__text--hour">{formatTime(time.hour)}</p>
         <p className="bar__clock__text bar__clock__text--colon">:</p>
