@@ -1,8 +1,8 @@
 import "./startMenu.scss";
 import StartButton from "./Button/StartButton";
 import Avatar from "../../../../assets/icons/avatar.png";
-import Logoff from "../../../../assets/icons/logoff.png";
-import ShutDown from "../../../../assets/icons/shutdown.png";
+import Footer from "./Footer/Footer";
+
 function StartMenu(props) {
   return (
     <div className="start-menu">
@@ -19,20 +19,7 @@ function StartMenu(props) {
         </div>
         <div className="start-menu__container__contact"></div>
       </div>
-      <footer className="start-menu__footer">
-        <div className="start-menu__footer__btn-container">
-          <button className="start-menu__footer__btn-container__btn start-menu__footer__btn-container__btn--logoff">
-            <img className="start-menu__footer__btn-container__btn__img" src={Logoff} alt="logoff button" />
-          </button>
-          <p className="start-menu__footer__btn-container__btn__text">Log Off</p>
-        </div>
-        <div className="start-menu__footer__btn-container">
-          <button className="start-menu__footer__btn-container__btn start-menu__footer__btn-container__btn--shutdown">
-            <img className="start-menu__footer__btn-container__btn__img" src={ShutDown} alt="shut down button" />
-          </button>
-          <p className="start-menu__footer__btn-container__btn__text">Turn Off Computer</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
