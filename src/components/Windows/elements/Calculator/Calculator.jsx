@@ -1,10 +1,11 @@
 import "./calculator.scss";
 import CalcButton from "./CalcButton/CalcButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Calculator(props) {
   const [calcInput, setCalcInput] = useState("0");
   const [calcValue, setCalcValue] = useState([]);
+  const [result, setResult] = useState(null);
 
   const handleCalcInput = (e) => {
     if (calcInput === "0") {
@@ -19,11 +20,37 @@ function Calculator(props) {
     setCalcInput("0");
   };
 
+  const handleReset = () => {
+    setCalcValue([]);
+    setCalcInput("0");
+  };
+
   const handleEqual = () => {
     calcValue.push(calcInput);
-    const equal = calcValue.join("").replace(",", "");
-    console.log(equal, calcValue);
+    const num1 = parseFloat(calcValue[0]);
+    const operator = calcValue[1];
+    const num2 = parseFloat(calcValue[2]);
+
+    if (operator === "+") {
+      setResult(num1 + num2);
+    } else if (operator === "-") {
+      setResult(num1 - num2);
+    } else if (operator === "*") {
+      setResult(num1 * num2);
+    } else if (operator === "/") {
+      setResult(num1 / num2);
+    } else if (operator === "%") {
+      setResult((num1 / 100) * num2 + "%");
+    }
+    setCalcInput(result);
   };
+
+  useEffect(() => {
+    if (result !== null) {
+      setCalcInput(result);
+      setCalcValue([]);
+    }
+  }, [result]);
 
   const handleCalcClose = () => {
     props.handleCalculator();
@@ -57,11 +84,13 @@ function Calculator(props) {
             <CalcButton className="calc-btn calc-btn--nums calc-btn calc-btn--nums--dummy" value="x" />
           </div>
           <div className="calculator__calc-field__btns--operational">
-            <CalcButton className="calc-btn calc-btn--operational" type="operation" value="," function={handleCalcInput} />
+            <CalcButton className="calc-btn calc-btn--operational" type="operation" value="." function={handleCalcInput} />
             <CalcButton className="calc-btn calc-btn--operational" type="operation" value="+" function={handleCalcOperation} />
             <CalcButton className="calc-btn calc-btn--operational" type="operation" value="-" function={handleCalcOperation} />
             <CalcButton className="calc-btn calc-btn--operational" type="operation" value="/" function={handleCalcOperation} />
             <CalcButton className="calc-btn calc-btn--operational" type="operation" value="*" function={handleCalcOperation} />
+            <CalcButton className="calc-btn calc-btn--operational" type="operation" value="%" function={handleCalcOperation} />
+            <CalcButton className="calc-btn calc-btn--operational" type="operation" value="C" function={handleReset} />
             <CalcButton className="calc-btn calc-btn--operational" type="equal" value="=" function={handleEqual} />
           </div>
         </div>
