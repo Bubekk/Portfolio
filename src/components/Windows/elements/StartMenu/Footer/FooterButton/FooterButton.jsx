@@ -9,7 +9,7 @@ function FooterButton(props) {
     if (props.btnType == "logoff") {
       props.handleLogOff();
     } else {
-      console.log("to jest wyłącz");
+      props.handleShutDown();
     }
   };
 

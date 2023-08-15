@@ -3,12 +3,19 @@ import Bar from "./elements/Bar/Bar";
 import StickyNote from "./elements/StickyNote/StickyNote";
 import FileLink from "./elements/FileLink/FileLink";
 import ResumeWindow from "./elements/ResumeWindow/ResumeWindow";
+import Calculator from "./elements/Calculator/Calculator";
 import StartMenu from "./elements/StartMenu/StartMenu";
 import { useState } from "react";
 
 function Windows(props) {
   const [isResumeVisible, setIsResumeVisible] = useState(false);
+  const [isCalcVisible, setIsCalcVisible] = useState(true);
   const [isStartVisible, setIsStartVisible] = useState(false);
+
+  const handleCalculator = () => {
+    setIsCalcVisible(!isCalcVisible);
+    console.log(isCalcVisible);
+  };
 
   const handleResumeLink = () => {
     setIsResumeVisible(!isResumeVisible);
@@ -30,7 +37,13 @@ function Windows(props) {
           <StickyNote color="red" text="Remember to click twice on icons. it's XP after all ;) " />
         </div>
         <ResumeWindow handleResumeLink={handleResumeLink} style={{ display: isResumeVisible ? "block" : "none" }} />
-        <StartMenu style={{ display: isStartVisible ? "block" : "none" }} handleLogOff={props.handleLogOff} />
+        <Calculator handleCalculator={handleCalculator} style={{ display: isCalcVisible ? "block" : "none" }} />
+        <StartMenu
+          style={{ display: isStartVisible ? "block" : "none" }}
+          handleLogOff={props.handleLogOff}
+          handleShutDown={props.handleShutDown}
+          handleCalculator={handleCalculator}
+        />
       </div>
       <Bar handleStartMenuBtn={handleStartMenuBtn} />
     </div>

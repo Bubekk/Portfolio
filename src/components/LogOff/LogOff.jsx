@@ -4,22 +4,23 @@ import Window from "../../assets/window/window.png";
 
 function LogOff(props) {
   const textRef = useRef(null);
+  const initialText = `${props.logOff ? "Logging Off..." : "Turning Your Computer Down..."}`;
 
   useEffect(() => {
     const timer = setTimeout(() => {
       if (textRef.current) {
-        textRef.current.textContent = "It's almost done...";
+        textRef.current.textContent = `${props.logOff ? "It's almost done..." : "Now you joking, right?"}`;
       }
     }, 3000);
     const timerTwo = setTimeout(() => {
       if (textRef.current) {
-        textRef.current.textContent = "Nah... just kidding";
+        textRef.current.textContent = `${props.logOff ? "Nah... just kidding" : "You know it's just XP template?"}`;
       }
     }, 6000);
     const timerThree = setTimeout(() => {
       if (textRef.current) {
         props.handleBackToWindows();
-        textRef.current.textContent = "Logging off...";
+        textRef.current.textContent = initialText;
       }
     }, 9000);
 
@@ -28,7 +29,7 @@ function LogOff(props) {
       clearTimeout(timerTwo);
       clearTimeout(timerThree);
     };
-  }, [props.logOff]);
+  }, [props.logOff, props.shutDown]);
 
   return (
     <div className="logoff-screen" style={props.style}>
@@ -36,7 +37,7 @@ function LogOff(props) {
       <div className="logoff-screen__middle-bar">
         <img className="logoff-screen__middle-bar__img" src={Window} alt="temporary window logo, till i can't get something even funnier..." />
         <p className="logoff-screen__middle-bar__text" ref={textRef}>
-          Logging off...
+          {initialText}
         </p>
       </div>
       <div className="logoff-screen__bottom-bar"></div>

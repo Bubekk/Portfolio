@@ -33,8 +33,18 @@ function App() {
 
   return (
     <div className="main">
-      <LogOff logOff={logOff} handleBackToWindows={handleBackToWindows} style={{ display: logOff ? "block" : "none" }} />
-      <Windows handleLogOff={handleLogOff} handleCodeEditorLink={handleCodeEditorLink} style={{ display: isWindowsVisible ? "block" : "none" }} />
+      <LogOff
+        logOff={logOff}
+        shutDown={shutDown}
+        handleBackToWindows={handleBackToWindows}
+        style={{ display: logOff || shutDown ? "block" : "none" }}
+      />
+      <Windows
+        handleLogOff={handleLogOff}
+        handleShutDown={handleShutDown}
+        handleCodeEditorLink={handleCodeEditorLink}
+        style={{ display: isWindowsVisible ? "block" : "none" }}
+      />
       <CodeEditor handleCodeEditorLink={handleCodeEditorLink} style={{ display: isCodeVisible ? "block" : "none" }} />
     </div>
   );

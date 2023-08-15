@@ -14,12 +14,12 @@ function StartMenu(props) {
       </nav>
       <div className="start-menu__container">
         <div className="start-menu__container__btns">
-          <StartButton icon="calc" text="Calculator" />
-          <StartButton icon="minesweeper" text="Minesweeper/Saper" />
+          <StartButton icon="calc" type="calc" text="Calculator" handleCalculator={props.handleCalculator} />
+          <StartButton icon="minesweeper" type="saper" text="Minesweeper/Saper" />
         </div>
         <div className="start-menu__container__contact"></div>
       </div>
-      <Footer handleLogOff={props.handleLogOff} />
+      <Footer handleLogOff={props.handleLogOff} handleShutDown={props.handleShutDown} />
     </div>
   );
 }

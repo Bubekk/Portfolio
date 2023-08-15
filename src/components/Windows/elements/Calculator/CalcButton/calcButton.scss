@@ -1,0 +1,24 @@
+@use "../../../../../style/wincolors";
+
+.calc-btn {
+  width: 45px;
+  height: 45px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid wincolors.$win-bar-blue;
+  background: wincolors.$win-bar-gradient-white;
+  color: wincolors.$win-bar-blue;
+  &:hover {
+    background: wincolors.$win-bar-gradient-white-highlight;
+  }
+  &--operational {
+    color: red;
+  }
+
+  &--nums {
+    &--dummy {
+      opacity: 0;
+    }
+  }
+}
