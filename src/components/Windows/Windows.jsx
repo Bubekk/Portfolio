@@ -4,17 +4,22 @@ import StickyNote from "./elements/StickyNote/StickyNote";
 import FileLink from "./elements/FileLink/FileLink";
 import ResumeWindow from "./elements/ResumeWindow/ResumeWindow";
 import Calculator from "./elements/Calculator/Calculator";
+import Saper from "./elements/Saper/Saper";
 import StartMenu from "./elements/StartMenu/StartMenu";
 import { useState } from "react";
 
 function Windows(props) {
   const [isResumeVisible, setIsResumeVisible] = useState(false);
-  const [isCalcVisible, setIsCalcVisible] = useState(true);
+  const [isCalcVisible, setIsCalcVisible] = useState(false);
+  const [isSaperVisible, setIsSaperVisible] = useState(false);
   const [isStartVisible, setIsStartVisible] = useState(false);
 
   const handleCalculator = () => {
     setIsCalcVisible(!isCalcVisible);
-    console.log(isCalcVisible);
+  };
+
+  const handleSaper = () => {
+    setIsSaperVisible(!isSaperVisible);
   };
 
   const handleResumeLink = () => {
@@ -38,11 +43,13 @@ function Windows(props) {
         </div>
         <ResumeWindow handleResumeLink={handleResumeLink} style={{ display: isResumeVisible ? "block" : "none" }} />
         <Calculator handleCalculator={handleCalculator} style={{ display: isCalcVisible ? "block" : "none" }} />
+        <Saper handleSaper={handleSaper} style={{ display: isSaperVisible ? "block" : "none" }} />
         <StartMenu
           style={{ display: isStartVisible ? "block" : "none" }}
           handleLogOff={props.handleLogOff}
           handleShutDown={props.handleShutDown}
           handleCalculator={handleCalculator}
+          handleSaper={handleSaper}
         />
       </div>
       <Bar handleStartMenuBtn={handleStartMenuBtn} />

@@ -6,6 +6,8 @@ function StartButton(props) {
   const handleClick = () => {
     if (props.type === "calc") {
       props.handleCalculator();
+    } else {
+      props.handleSaper();
     }
   };
 

@@ -15,7 +15,7 @@ function StartMenu(props) {
       <div className="start-menu__container">
         <div className="start-menu__container__btns">
           <StartButton icon="calc" type="calc" text="Calculator" handleCalculator={props.handleCalculator} />
-          <StartButton icon="minesweeper" type="saper" text="Minesweeper/Saper" />
+          <StartButton icon="minesweeper" type="saper" text="Minesweeper/Saper" handleSaper={props.handleSaper} />
         </div>
         <div className="start-menu__container__contact"></div>
       </div>

@@ -54,6 +54,8 @@ function Calculator(props) {
 
   const handleCalcClose = () => {
     props.handleCalculator();
+    setCalcInput("0");
+    setCalcValue([]);
   };
 
   return (
