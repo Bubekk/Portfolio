@@ -1,4 +1,6 @@
 import "./saper.scss";
+import Board from "./components/Board";
+import Game from "./utils/Game";
 
 function Saper(props) {
   const handleClick = () => {
@@ -13,6 +15,9 @@ function Saper(props) {
           &#935;
         </button>
       </nav>
+      <div className="saper__gamespace">
+        <Board />
+      </div>
     </div>
   );
 }
