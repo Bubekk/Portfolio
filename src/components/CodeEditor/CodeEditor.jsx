@@ -32,12 +32,12 @@ function MainFunction(props) {
       <Education />
       <Experience />
       <Skills />
-      <Line number={0}>
+      <Line number={57}>
         <span className="main-function__text main-function__text main-function__text--parenthesis main-function__text--parenthesis--close">
           &#41;
         </span>
       </Line>
-      <Line number={0}>
+      <Line number={58}>
         <span className="main-function__text main-function__text--bracket main-function__text--bracket--close">&#125;</span>
       </Line>
     </div>

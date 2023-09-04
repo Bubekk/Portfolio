@@ -40,7 +40,7 @@ function Skills(props) {
           <img className="arr__icon" src={pythonIcon} alt="python icon" />
         </Arr>
       </Line>
-      <Line number={0}>
+      <Line number={56}>
         <span className="skills__text skills__text--bracket skills__text--bracket--close">&#125; </span>
       </Line>
     </div>
