@@ -5,52 +5,52 @@ import Object from "../Object/Object";
 function Education(props) {
   return (
     <div className="education">
-      <Line number={13}>
+      <Line number={17}>
         <span className="education__text education__text--one">const </span>
         <span className="education__text education__text--two">myEducation </span>
         <span className="education__text education__text--three">&#61; </span>
         <span className="education__text education__text--square-bracket">&#91;</span>
       </Line>
       <Object
-        bracketOpen={14}
-        idNum={15}
+        bracketOpen={18}
+        idNum={19}
         id="0,"
-        dateNum={16}
-        date="01.01.01,"
-        titleNum={17}
-        title="edu1,"
-        objectiveNum={18}
-        objective="objective1"
-        bracketClose={19}
+        dateNum={20}
+        date="08.23 - 09.23,"
+        titleNum={21}
+        title={`"frontend developer course - EU certification",`}
+        objectiveNum={22}
+        objective={`"Short EU course with exams and certification"`}
+        bracketClose={23}
         comma={true}
       />
       <Object
-        bracketOpen={20}
-        idNum={21}
+        bracketOpen={24}
+        idNum={25}
         id="1,"
-        dateNum={22}
-        date="01.01.01,"
-        titleNum={23}
-        title="edu1,"
-        objectiveNum={24}
-        objective="objective1"
-        bracketClose={25}
+        dateNum={26}
+        date="08.2017 – 04.2020,"
+        titleNum={27}
+        title={`"GWSP CHORZOW - Game design and interactive graphics",`}
+        objectiveNum={28}
+        objective={`"Bachelor's degree completed thanks to a pixelart 2d game created in Unity"`}
+        bracketClose={29}
         comma={true}
       />
       <Object
-        bracketOpen={26}
-        idNum={27}
+        bracketOpen={30}
+        idNum={31}
         id="2,"
-        dateNum={28}
-        date="01.01.01,"
-        titleNum={29}
-        title="edu1,"
-        objectiveNum={30}
-        objective="objective1"
-        bracketClose={31}
+        dateNum={32}
+        date="09.2012 – 08.2016,"
+        titleNum={33}
+        title={`"TECHNICAL SCHOOL NO. 7 IN ZABRZE - It and Bioengineering",`}
+        objectiveNum={34}
+        objective={`"IT technician title confirmed by a state examination"`}
+        bracketClose={35}
         comma={false}
       />
-      <Line number={32}>
+      <Line number={36}>
         <span className="education__text education__text--square-bracket education__text--square-bracket--close">&#93;</span>
       </Line>
     </div>

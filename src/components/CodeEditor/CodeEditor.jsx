@@ -29,9 +29,9 @@ function MainFunction(props) {
         <span className="main-function__text main-function__text--parenthesis">&#40;</span>{" "}
       </Line>
       <AboutMe />
+      <Skills />
       <Education />
       <Experience />
-      <Skills />
       <Line number={57}>
         <span className="main-function__text main-function__text main-function__text--parenthesis main-function__text--parenthesis--close">
           &#41;

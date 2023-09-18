@@ -1,14 +1,27 @@
 import "./fileLink.scss";
 import PdfIcon from "../../../../assets/icons/pdf-icon.png";
 import CodeIcon from "../../../../assets/icons/code-icon.png";
+import FolderIcon from "../../../../assets/icons/folder-icon.png";
 
 function FileLink(props) {
-  const iconSrc = props.type === "pdf" ? PdfIcon : CodeIcon;
+  const iconSrc = props.type === "pdf" ? PdfIcon : props.type === "code" ? CodeIcon : FolderIcon;
+
   const handleBtn = () => {
-    const link = props.type === "pdf" ? props.handleResumeLink() : props.handleCodeEditorLink();
+    const link = props.type === "pdf" ? props.handleResumeLink() : props.type === "code" ? props.handleCodeEditorLink() : props.handleFolder();
   };
+
   return (
-    <button className="file-link" onDoubleClick={handleBtn}>
+    <button
+      className="file-link"
+      onDoubleClick={handleBtn}
+      title={`${
+        props.type === "pdf"
+          ? "File type: dummy pdf, that is just my resume and you can download it"
+          : props.type === "code"
+          ? "File type: That is dummy IDE that shows my resume in different way, because I want to make something fun here"
+          : "File type: Folder of anything what is inside... this folder.. i guess. "
+      }`}
+    >
       <img className={`file-link__icon file-link__icon--${props.type}`} src={iconSrc} alt={props.alt} />
       <p className="file-link__file-name">{props.fileName}</p>
     </button>

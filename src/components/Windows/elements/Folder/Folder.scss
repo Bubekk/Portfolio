@@ -1,0 +1,53 @@
+@use "../../../../style/wincolors";
+
+.folder {
+  border-left: 2px solid wincolors.$win-bar-lightblue;
+  border-right: 2px solid wincolors.$win-bar-lightblue;
+  border-bottom: 2px solid wincolors.$win-bar-lightblue;
+  border-radius: 5px;
+  overflow: hidden;
+  position: fixed;
+  width: 35vw;
+  top: 20px;
+  left: 430px;
+  height: 70vh;
+  background-color: wincolors.$win-white;
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: wincolors.$win-bar-gradient-blue;
+    height: 1.5rem;
+    width: 100%;
+    &__filename {
+      font-size: 20px;
+      margin: 0;
+      padding-left: 0.3rem;
+    }
+    &__btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding-right: 0.3rem;
+      &__btn {
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        text-decoration: none;
+        border: 0.5px solid wincolors.$win-white;
+        background: none;
+        text-align: center;
+        font-size: 14px;
+        color: wincolors.$win-white;
+        &--close {
+          background: wincolors.$win-bar-gradient-red;
+          &:hover {
+            background: wincolors.$win-bar-gradient-red-highlight;
+          }
+        }
+      }
+    }
+  }
+}
