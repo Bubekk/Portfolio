@@ -2,9 +2,10 @@ import "./fileLink.scss";
 import PdfIcon from "../../../../assets/icons/pdf-icon.png";
 import CodeIcon from "../../../../assets/icons/code-icon.png";
 import FolderIcon from "../../../../assets/icons/folder-icon.png";
+import ProjectIcon from "../../../../assets/icons/project-icon.png";
 
 function FileLink(props) {
-  const iconSrc = props.type === "pdf" ? PdfIcon : props.type === "code" ? CodeIcon : FolderIcon;
+  const iconSrc = props.type === "pdf" ? PdfIcon : props.type === "code" ? CodeIcon : props.type === "folder" ? FolderIcon : ProjectIcon;
 
   const handleBtn = () => {
     const link = props.type === "pdf" ? props.handleResumeLink() : props.type === "code" ? props.handleCodeEditorLink() : props.handleFolder();
@@ -23,7 +24,9 @@ function FileLink(props) {
       }`}
     >
       <img className={`file-link__icon file-link__icon--${props.type}`} src={iconSrc} alt={props.alt} />
-      <p className="file-link__file-name">{props.fileName}</p>
+      <p className={`file-link__file-name file-link__file-name--${props.type === "projectFolder" || props.type === "pixelFolder" ? "black" : ""}`}>
+        {props.fileName}
+      </p>
     </button>
   );
 }

@@ -50,17 +50,23 @@ function Windows(props) {
       <div className="windows__screen">
         <FileLink type="pdf" alt="link to resume and pdf icon" fileName="resume.pdf" handleResumeLink={handleResumeLink} />
         <FileLink type="code" alt="link to resume and code icon" fileName="Portfolio.jsx" handleCodeEditorLink={props.handleCodeEditorLink} />
-        <FileLink type="folderProjects" alt="link to folder and folder icon" fileName="Projects" handleFolder={handleFolderProjects} />
-        <FileLink type="folderPixels" alt="link to folder and folder icon" fileName="Pixelart" handleFolder={handleFolderPixel} />
+        <FileLink type="folder" alt="link to folder and folder icon" fileName="Projects" handleFolder={handleFolderProjects} />
+        <FileLink type="folder" alt="link to folder and folder icon" fileName="Pixelart" handleFolder={handleFolderPixel} />
         <div className="windows__screen__sticky-notes">
           <StickyNote color="yellow" text="Remember to check Portfolio.jsx!!!" />
           <StickyNote color="blue" text="Read the resume.pdf, don't forget again!" />
           <StickyNote color="pink" text="I know.. there were no sticky notes in XP, but somehow I have to guide you, right?" />
           <StickyNote color="red" text="Remember to click twice on icons. it's XP after all ;) " />
         </div>
-        <Folder type="Projects" handleFolder={handleFolderProjects} style={{ display: isFolderProjectVisible ? "block" : "none" }} />
         <Folder
-          type="PixelArt"
+          type="projects"
+          fileName="Projects"
+          handleFolder={handleFolderProjects}
+          style={{ display: isFolderProjectVisible ? "block" : "none" }}
+        />
+        <Folder
+          type="pixelArt"
+          fileName="Pixelart"
           handleFolder={handleFolderPixel}
           style={{ display: isFolderPixelVisible ? "block" : "none", top: "100px", left: "480px" }}
         />

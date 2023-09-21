@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./Folder.scss";
+import ProjectsContent from "./FolderContent/ProjectContent/ProjectsContent";
+import PixelContent from "./FolderContent/PixelContent/PixelContent";
 
 function Folder(props) {
   const handleClose = () => {
@@ -7,16 +9,22 @@ function Folder(props) {
   };
 
   return (
-    <div className={`folder`} style={props.style}>
+    <div className="folder" style={props.style}>
       <nav className="folder__nav">
-        <p className="folder__nav__filename">{props.type}</p>
+        <p className="folder__nav__filename">{props.fileName}</p>
         <div className="folder__nav__btns">
           <button className="folder__nav__btns__btn folder__nav__btns__btn--close" onClick={handleClose}>
             &#935;
           </button>
         </div>
       </nav>
-      I am folder
+      <div className="folder__content">
+        <nav className="folder__content__bar">I am bar above</nav>
+        <section className="folder__content__main">
+          {props.type === "projects" && <ProjectsContent />}
+          {props.type === "pixelArt" && <PixelContent />}
+        </section>
+      </div>
     </div>
   );
 }

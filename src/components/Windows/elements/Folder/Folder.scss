@@ -1,9 +1,9 @@
 @use "../../../../style/wincolors";
 
 .folder {
-  border-left: 2px solid wincolors.$win-bar-lightblue;
-  border-right: 2px solid wincolors.$win-bar-lightblue;
-  border-bottom: 2px solid wincolors.$win-bar-lightblue;
+  border-left: 3px solid wincolors.$win-bar-blue;
+  border-right: 3px solid wincolors.$win-bar-blue;
+  border-bottom: 3px solid wincolors.$win-bar-blue;
   border-radius: 5px;
   overflow: hidden;
   position: fixed;
@@ -11,7 +11,7 @@
   top: 20px;
   left: 430px;
   height: 70vh;
-  background-color: wincolors.$win-white;
+  background-color: wincolors.$win-purewhite;
 
   &__nav {
     display: flex;
@@ -48,6 +48,12 @@
           }
         }
       }
+    }
+  }
+
+  &__content {
+    &__bar {
+      background-color: wincolors.$win-white;
     }
   }
 }
