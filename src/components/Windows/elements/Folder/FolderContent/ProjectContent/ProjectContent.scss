@@ -1,4 +1,6 @@
 .project {
-  display: flex;
-  flex-direction: row;
+  &__links {
+    display: flex;
+    flex-direction: row;
+  }
 }

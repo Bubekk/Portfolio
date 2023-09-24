@@ -8,7 +8,24 @@ function FileLink(props) {
   const iconSrc = props.type === "pdf" ? PdfIcon : props.type === "code" ? CodeIcon : props.type === "folder" ? FolderIcon : ProjectIcon;
 
   const handleBtn = () => {
-    const link = props.type === "pdf" ? props.handleResumeLink() : props.type === "code" ? props.handleCodeEditorLink() : props.handleFolder();
+    const link =
+      props.type === "pdf"
+        ? props.handleResumeLink()
+        : props.type === "code"
+        ? props.handleCodeEditorLink()
+        : props.type === "folder"
+        ? props.handleFolder()
+        : handleLink();
+  };
+
+  const handleLink = () => {
+    if (props.linkto === "project1") {
+      props.showProject(1);
+    } else if (props.linkto === "project2") {
+      props.showProject(2);
+    } else {
+      props.showProject(3);
+    }
   };
 
   return (

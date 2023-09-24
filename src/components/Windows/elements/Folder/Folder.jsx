@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Folder.scss";
 import ProjectsContent from "./FolderContent/ProjectContent/ProjectsContent";
 import PixelContent from "./FolderContent/PixelContent/PixelContent";
+import UpperBar from "./UpperBar/UpperBar";
 
 function Folder(props) {
   const handleClose = () => {
@@ -19,7 +20,7 @@ function Folder(props) {
         </div>
       </nav>
       <div className="folder__content">
-        <nav className="folder__content__bar">I am bar above</nav>
+        <UpperBar />
         <section className="folder__content__main">
           {props.type === "projects" && <ProjectsContent />}
           {props.type === "pixelArt" && <PixelContent />}
