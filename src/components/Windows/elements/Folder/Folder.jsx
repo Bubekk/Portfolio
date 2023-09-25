@@ -15,7 +15,15 @@ function Folder(props) {
     project3: false,
   });
 
+  const [pixels, setPixels] = useState({
+    pixel1: false,
+    pixel2: false,
+    pixel3: false,
+  });
+
   const [lastProject, setLastProject] = useState(null);
+
+  const [lastPixel, setLastPixel] = useState(null);
 
   useEffect(() => {
     if (projects.project1) {
@@ -27,10 +35,27 @@ function Folder(props) {
     }
   }, [projects]);
 
+  useEffect(() => {
+    if (pixels.pixel1) {
+      setLastPixel(1);
+    } else if (pixels.pixel2) {
+      setLastPixel(2);
+    } else if (pixels.pixel3) {
+      setLastPixel(3);
+    }
+  }, [pixels]);
+
   const showProject = (projectNumber) => {
     setProjects((prevProjects) => ({
       ...prevProjects,
       [`project${projectNumber}`]: true,
+    }));
+  };
+
+  const showPixel = (pixelNumber) => {
+    setPixels((prevPixels) => ({
+      ...prevPixels,
+      [`pixel${pixelNumber}`]: true,
     }));
   };
 
@@ -39,6 +64,11 @@ function Folder(props) {
       project1: false,
       project2: false,
       project3: false,
+    });
+    setPixels({
+      pixel1: false,
+      pixel2: false,
+      pixel3: false,
     });
   };
 
@@ -53,10 +83,18 @@ function Folder(props) {
         </div>
       </nav>
       <div className="folder__content">
-        <UpperBar backInFolder={backInFolder} backInLast={showProject} projects={projects} lastProject={lastProject} />
+        <UpperBar
+          backInFolder={backInFolder}
+          backInLast={showProject}
+          backInLastPixel={showPixel}
+          projects={projects}
+          pixels={pixels}
+          lastProject={lastProject}
+          lastPixel={lastPixel}
+        />
         <section className="folder__content__main">
           {props.type === "projects" && <ProjectsContent projects={projects} showProject={showProject} />}
-          {props.type === "pixelArt" && <PixelContent projects={projects} showProject={showProject} />}
+          {props.type === "pixelArt" && <PixelContent projects={pixels} showPixel={showPixel} />}
         </section>
       </div>
     </div>

@@ -23,8 +23,14 @@ function FileLink(props) {
       props.showProject(1);
     } else if (props.linkto === "project2") {
       props.showProject(2);
-    } else {
+    } else if (props.linkto === "project3") {
       props.showProject(3);
+    } else if (props.linkto === "pixel1") {
+      props.showPixel(1);
+    } else if (props.linkto === "pixel2") {
+      props.showPixel(2);
+    } else if (props.linkto === "pixel3") {
+      props.showPixel(3);
     }
   };
 

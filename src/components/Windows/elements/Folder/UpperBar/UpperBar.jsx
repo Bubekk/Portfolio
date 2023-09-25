@@ -10,17 +10,45 @@ function UpperBar(props) {
   };
 
   const handleNext = () => {
-    props.backInLast(props.lastProject);
+    if (props.lastProject) {
+      props.backInLast(props.lastProject);
+    } else if (props.lastPixel) {
+      props.backInLastPixel(props.lastPixel);
+    }
   };
 
   return (
     <div className="upper-bar">
       <button className="upper-bar__btn upper-bar__btn--back" onClick={handleBack}>
-        <img src={props.projects.project1 || props.projects.project2 || props.projects.project3 ? BackIcon : BackBwIcon} alt="Back Button Icon" />
+        <img
+          src={
+            props.projects.project1 ||
+            props.projects.project2 ||
+            props.projects.project3 ||
+            props.pixels.pixel1 ||
+            props.pixels.pixel2 ||
+            props.pixels.pixel3
+              ? BackIcon
+              : BackBwIcon
+          }
+          alt="Back Button Icon"
+        />
         <p>Back</p>
       </button>
       <button className="upper-bar__btn upper-bar__btn--next" onClick={handleNext}>
-        <img src={props.projects.project1 || props.projects.project2 || props.projects.project3 ? NextBwIcon : NextIcon} alt="Next Button Icon" />
+        <img
+          src={
+            props.projects.project1 ||
+            props.projects.project2 ||
+            props.projects.project3 ||
+            props.pixels.pixel1 ||
+            props.pixels.pixel2 ||
+            props.pixels.pixel3
+              ? NextBwIcon
+              : NextIcon
+          }
+          alt="Next Button Icon"
+        />
         <p>Next</p>
       </button>
     </div>
