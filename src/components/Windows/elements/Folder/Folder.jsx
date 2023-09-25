@@ -7,6 +7,7 @@ import UpperBar from "./UpperBar/UpperBar";
 function Folder(props) {
   const handleClose = () => {
     props.handleFolder();
+    backInFolder();
   };
 
   const [projects, setProjects] = useState({
