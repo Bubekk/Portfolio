@@ -19,28 +19,34 @@ function Windows(props) {
   const [isFolderPixelVisible, setIsFolderPixelVisible] = useState(false);
   const [isStartVisible, setIsStartVisible] = useState(false);
 
+  //handling calculator window opening
   const handleCalculator = () => {
     setIsCalcVisible(!isCalcVisible);
   };
 
+  //handling minesweeper window opening, Right now under maintance so insstead of minesweeper the error shows up
   const handleSaper = () => {
     // Changing actal Minesweeper with win error window
     // setIsSaperVisible(!isSaperVisible);
     setIsSaperErrorVisible(!isSaperErrorVisible);
   };
 
+  //handling resume window opening
   const handleResumeLink = () => {
     setIsResumeVisible(!isResumeVisible);
   };
 
+  //handling start menu opening
   const handleStartMenuBtn = () => {
     setIsStartVisible(!isStartVisible);
   };
 
+  //handling projects folder opening
   const handleFolderProjects = () => {
     setIsFolderProjectVisible(!isFolderProjectVisible);
   };
 
+  //handling pixel folder opening
   const handleFolderPixel = () => {
     setIsFolderPixelVisible(!isFolderPixelVisible);
   };

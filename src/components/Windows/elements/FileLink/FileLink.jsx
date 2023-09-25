@@ -5,8 +5,10 @@ import FolderIcon from "../../../../assets/icons/folder-icon.png";
 import ProjectIcon from "../../../../assets/icons/project-icon.png";
 
 function FileLink(props) {
+  //Dynamic seting of folder icon by prop type
   const iconSrc = props.type === "pdf" ? PdfIcon : props.type === "code" ? CodeIcon : props.type === "folder" ? FolderIcon : ProjectIcon;
 
+  //handling icon double click that opens proper folder selecting it by prop type. When any of type is ok it goes to another function
   const handleBtn = () => {
     const link =
       props.type === "pdf"
@@ -18,6 +20,7 @@ function FileLink(props) {
         : handleLink();
   };
 
+  //handling proper folder content showing depends on prop linkto
   const handleLink = () => {
     if (props.linkto === "project1") {
       props.showProject(1);

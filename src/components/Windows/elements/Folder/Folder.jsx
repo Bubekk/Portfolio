@@ -5,27 +5,33 @@ import PixelContent from "./FolderContent/PixelContent/PixelContent";
 import UpperBar from "./UpperBar/UpperBar";
 
 function Folder(props) {
+  //Handling Close btn of whole folder and using backInFolder function to set all states to false
   const handleClose = () => {
     props.handleFolder();
     backInFolder();
   };
 
+  //State of all projects. If you need to add project add a object element first.
   const [projects, setProjects] = useState({
     project1: false,
     project2: false,
     project3: false,
   });
 
+  //State of all pixels projects. If you need to add pixel project add a object element first.
   const [pixels, setPixels] = useState({
     pixel1: false,
     pixel2: false,
     pixel3: false,
   });
 
+  //state of last opened project
   const [lastProject, setLastProject] = useState(null);
 
+  //state of last opened pixel project
   const [lastPixel, setLastPixel] = useState(null);
 
+  //useEffect for checking last opened project and setting the state of it
   useEffect(() => {
     if (projects.project1) {
       setLastProject(1);
@@ -36,6 +42,7 @@ function Folder(props) {
     }
   }, [projects]);
 
+  //useEffect for checking last opened pixel project and setting the state of it
   useEffect(() => {
     if (pixels.pixel1) {
       setLastPixel(1);
@@ -46,6 +53,7 @@ function Folder(props) {
     }
   }, [pixels]);
 
+  //function for dynamic setting state of project
   const showProject = (projectNumber) => {
     setProjects((prevProjects) => ({
       ...prevProjects,
@@ -53,6 +61,7 @@ function Folder(props) {
     }));
   };
 
+  //function for dynamic setting state of pixel project
   const showPixel = (pixelNumber) => {
     setPixels((prevPixels) => ({
       ...prevPixels,
@@ -60,6 +69,7 @@ function Folder(props) {
     }));
   };
 
+  //function that handle Back btn setting all projects and states to false. Backing up to main content of folder
   const backInFolder = () => {
     setProjects({
       project1: false,
@@ -94,6 +104,7 @@ function Folder(props) {
           lastPixel={lastPixel}
         />
         <section className="folder__content__main">
+          {/* Dynamic content rendering in main folder window */}
           {props.type === "projects" && <ProjectsContent projects={projects} showProject={showProject} />}
           {props.type === "pixelArt" && <PixelContent projects={pixels} showPixel={showPixel} />}
         </section>

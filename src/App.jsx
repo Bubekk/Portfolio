@@ -25,6 +25,7 @@ function App() {
     setIsWindowsVisible(!isWindowsVisible);
   };
 
+  //handling the timer which close the log off or shut down windows
   const handleBackToWindows = () => {
     setLogOff(false);
     setShutDown(false);

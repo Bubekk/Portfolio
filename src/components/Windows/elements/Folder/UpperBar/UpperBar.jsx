@@ -5,10 +5,12 @@ import BackBwIcon from "../../../../../assets/icons/back_bw.png";
 import NextBwIcon from "../../../../../assets/icons/next_bw.png";
 
 function UpperBar(props) {
+  //handling nav back btn
   const handleBack = () => {
     props.backInFolder();
   };
 
+  //handling nav forward/next btn
   const handleNext = () => {
     if (props.lastProject) {
       props.backInLast(props.lastProject);
@@ -21,6 +23,7 @@ function UpperBar(props) {
     <div className="upper-bar">
       <button className="upper-bar__btn upper-bar__btn--back" onClick={handleBack}>
         <img
+          //setting back btn icon color depending on if some of inner folder was opened or not
           src={
             props.projects.project1 ||
             props.projects.project2 ||
@@ -37,6 +40,7 @@ function UpperBar(props) {
       </button>
       <button className="upper-bar__btn upper-bar__btn--next" onClick={handleNext}>
         <img
+          //setting next btn icon color depending on if main folder window is opened or inner folder
           src={
             props.projects.project1 ||
             props.projects.project2 ||

@@ -6,6 +6,7 @@ function LogOff(props) {
   const textRef = useRef(null);
   const initialText = `${props.logOff ? "Logging Off..." : "Turning Your Computer Down..."}`;
 
+  //useEffect that changes text on screen by timeout. It goes with log off and shut down screen
   useEffect(() => {
     const timer = setTimeout(() => {
       if (textRef.current) {

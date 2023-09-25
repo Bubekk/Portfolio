@@ -3,6 +3,7 @@ import cv from "../../../../assets/resume/cv.png";
 import pdfCv from "/CV.pdf";
 
 function ResumeWindow(props) {
+  //handling download resume.pdf btn
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = pdfCv;
@@ -12,6 +13,8 @@ function ResumeWindow(props) {
     link.click();
     console.log(link);
   };
+
+  //handling folder closing
   const handleClose = () => {
     props.handleResumeLink();
   };
