@@ -21,16 +21,12 @@ function UpperBar(props) {
 
   return (
     <div className="upper-bar">
-      <button className="upper-bar__btn upper-bar__btn--back" onClick={handleBack}>
+      <button className="upper-bar__btn upper-bar__btn back" onClick={handleBack}>
         <img
           //setting back btn icon color depending on if some of inner folder was opened or not
+          className="icon icon--back"
           src={
-            props.projects.project1 ||
-            props.projects.project2 ||
-            props.projects.project3 ||
-            props.pixels.pixel1 ||
-            props.pixels.pixel2 ||
-            props.pixels.pixel3
+            props.projects.project1 || props.projects.project2 || props.pixels.pixel1 || props.pixels.pixel2 || props.pixels.pixel3
               ? BackIcon
               : BackBwIcon
           }
@@ -38,22 +34,17 @@ function UpperBar(props) {
         />
         <p>Back</p>
       </button>
-      <button className="upper-bar__btn upper-bar__btn--next" onClick={handleNext}>
+      <button className="upper-bar__btn upper-bar__btn next" onClick={handleNext}>
         <img
           //setting next btn icon color depending on if main folder window is opened or inner folder
+          className="icon icon--next"
           src={
-            props.projects.project1 ||
-            props.projects.project2 ||
-            props.projects.project3 ||
-            props.pixels.pixel1 ||
-            props.pixels.pixel2 ||
-            props.pixels.pixel3
+            props.projects.project1 || props.projects.project2 || props.pixels.pixel1 || props.pixels.pixel2 || props.pixels.pixel3
               ? NextBwIcon
               : NextIcon
           }
           alt="Next Button Icon"
         />
-        <p>Next</p>
       </button>
     </div>
   );

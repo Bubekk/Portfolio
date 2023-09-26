@@ -14,27 +14,20 @@ function ProjectsContent(props) {
           type="projectFolder"
           linkto="project1"
           alt="link to project folder and folder icon"
-          fileName="Example Project1"
+          fileName="Theravada - ThreeJS"
           showProject={props.showProject}
         />
         <FileLink
           type="projectFolder"
           linkto="project2"
           alt="link to project folder and folder icon"
-          fileName="Example Project2"
-          showProject={props.showProject}
-        />
-        <FileLink
-          type="projectFolder"
-          linkto="project3"
-          alt="link to project folder and folder icon"
-          fileName="Example Project3"
+          fileName="RinaNails - LandingPage"
           showProject={props.showProject}
         />
       </div>
       <div className="project__project-content">
         <LinkToContent
-          style={{ display: props.projects.project1 || props.projects.project2 || props.projects.project3 ? "flex" : "none", color: "black" }}
+          style={{ display: props.projects.project1 || props.projects.project2 ? "flex" : "none", color: "black" }}
           projects={props.projects}
         />
       </div>

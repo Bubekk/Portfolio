@@ -8,9 +8,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    img {
+    .icon {
       width: 25px;
       margin-right: 10px;
+
+      &--next {
+        margin: 0;
+      }
     }
     p {
       color: wincolors.$win-sticky-note-text;

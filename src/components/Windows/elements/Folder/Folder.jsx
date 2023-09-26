@@ -15,7 +15,6 @@ function Folder(props) {
   const [projects, setProjects] = useState({
     project1: false,
     project2: false,
-    project3: false,
   });
 
   //State of all pixels projects. If you need to add pixel project add a object element first.
@@ -37,8 +36,6 @@ function Folder(props) {
       setLastProject(1);
     } else if (projects.project2) {
       setLastProject(2);
-    } else if (projects.project3) {
-      setLastProject(3);
     }
   }, [projects]);
 
@@ -74,7 +71,6 @@ function Folder(props) {
     setProjects({
       project1: false,
       project2: false,
-      project3: false,
     });
     setPixels({
       pixel1: false,
