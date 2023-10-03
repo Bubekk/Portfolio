@@ -4,6 +4,7 @@ import StickyNote from "./elements/StickyNote/StickyNote";
 import FileLink from "./elements/FileLink/FileLink";
 import ResumeWindow from "./elements/ResumeWindow/ResumeWindow";
 import Calculator from "./elements/Calculator/Calculator";
+import Gallery from "./elements/PhotoGallery/Gallery";
 import Saper from "./elements/Saper/Saper";
 import SaperError from "./elements/Saper/SaperError/SaperError";
 import Folder from "./elements/Folder/Folder";
@@ -17,6 +18,7 @@ function Windows(props) {
   const [isSaperErrorVisible, setIsSaperErrorVisible] = useState(false);
   const [isFolderProjectVisible, setIsFolderProjectVisible] = useState(false);
   const [isFolderPixelVisible, setIsFolderPixelVisible] = useState(false);
+  const [isGalleryVisible, setIsGalleryVisible] = useState(false);
   const [isStartVisible, setIsStartVisible] = useState(false);
 
   //handling calculator window opening
@@ -34,6 +36,11 @@ function Windows(props) {
   //handling resume window opening
   const handleResumeLink = () => {
     setIsResumeVisible(!isResumeVisible);
+  };
+
+  //handling gallery window opening
+  const handleGalleryLink = () => {
+    setIsGalleryVisible(!isGalleryVisible);
   };
 
   //handling start menu opening
@@ -75,12 +82,15 @@ function Windows(props) {
           fileName="Pixelart"
           handleFolder={handleFolderPixel}
           style={{ display: isFolderPixelVisible ? "block" : "none", top: "100px", left: "480px" }}
+          handleGallery={handleGalleryLink}
         />
         <ResumeWindow handleResumeLink={handleResumeLink} style={{ display: isResumeVisible ? "block" : "none" }} />
         <Calculator handleCalculator={handleCalculator} style={{ display: isCalcVisible ? "block" : "none" }} />
+        <Gallery handleGallery={handleGalleryLink} style={{ display: isGalleryVisible ? "block" : "none", top: "10px", left: "700px" }} />
         {/* Minesweeper/Saper is not ready yet! */}
         {/* <Saper handleSaper={handleSaper} style={{ display: isSaperVisible ? "block" : "none" }} /> */}
         <SaperError handleSaper={handleSaper} style={{ display: isSaperErrorVisible ? "block" : "none" }} />
+
         <StartMenu
           style={{ display: isStartVisible ? "block" : "none" }}
           handleLogOff={props.handleLogOff}

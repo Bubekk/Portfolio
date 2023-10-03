@@ -10,28 +10,16 @@ function PixelContent(props) {
           type="pixelFolder"
           linkto="pixel1"
           alt="link to Pixel folder and folder icon"
-          fileName="Example Pixel1"
+          fileName="Static Pixels"
           showPixel={props.showPixel}
         />
-        <FileLink
-          type="pixelFolder"
-          linkto="pixel2"
-          alt="link to Pixel folder and folder icon"
-          fileName="Example Pixel2"
-          showPixel={props.showPixel}
-        />
-        <FileLink
-          type="pixelFolder"
-          linkto="pixel3"
-          alt="link to Pixel folder and folder icon"
-          fileName="Example Pixel3"
-          showPixel={props.showPixel}
-        />
+        <FileLink type="pixelFolder" linkto="pixel2" alt="link to Pixel folder and folder icon" fileName="Pixel Gifs" showPixel={props.showPixel} />
       </div>
       <div className="project__project-content">
         <LinkToContent
-          style={{ display: props.projects.pixel1 || props.projects.pixel2 || props.projects.pixel3 ? "flex" : "none", color: "black" }}
+          style={{ display: props.projects.pixel1 || props.projects.pixel2 ? "flex" : "none", color: "black" }}
           projects={props.projects}
+          handleGallery={props.handleGallery}
         />
       </div>
     </div>

@@ -30,8 +30,6 @@ function FileLink(props) {
       props.showPixel(1);
     } else if (props.linkto === "pixel2") {
       props.showPixel(2);
-    } else if (props.linkto === "pixel3") {
-      props.showPixel(3);
     }
   };
 

@@ -102,7 +102,7 @@ function Folder(props) {
         <section className="folder__content__main">
           {/* Dynamic content rendering in main folder window */}
           {props.type === "projects" && <ProjectsContent projects={projects} showProject={showProject} />}
-          {props.type === "pixelArt" && <PixelContent projects={pixels} showPixel={showPixel} />}
+          {props.type === "pixelArt" && <PixelContent projects={pixels} showPixel={showPixel} handleGallery={props.handleGallery} />}
         </section>
       </div>
     </div>
