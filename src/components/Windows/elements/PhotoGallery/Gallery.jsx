@@ -1,7 +1,54 @@
 import "./Gallery.scss";
+import { useContext, useState } from "react";
+import Carousel from "./Carousel";
+import { ImageContext } from "../../../../contexts/ImageContext";
+// import PixelOne from "../../../../assets/pixelsPhoto/PixelOne.png";
+// import PixelTwo from "../../../../assets/pixelsPhoto/PixelTwo.png";
 
 function Gallery(props) {
-  const galleryPhotos = [{}];
+  const { pixelPhotos } = useContext(ImageContext);
+
+  const slides = [
+    {
+      imageSrc: pixelPhotos["Blockhouse"],
+      caption: "Blockhouse Slaughter",
+    },
+    {
+      imageSrc: pixelPhotos["Ecto1"],
+      caption: "Ghost Busters Ecto-1",
+    },
+    {
+      imageSrc: pixelPhotos["EmberSwords"],
+      caption: "EmberSwords poster for fantasy game tournament",
+    },
+    {
+      imageSrc: pixelPhotos["Farmer"],
+      caption: "Character design",
+    },
+    {
+      imageSrc: pixelPhotos["OldResume"],
+      caption: "My own old resume which is 2 yrs old",
+    },
+    {
+      imageSrc: pixelPhotos["RedSnow"],
+      caption: "Idea of movie scene in pixelart",
+    },
+    {
+      imageSrc: pixelPhotos["SeaHouse"],
+      caption: "Bioshock/Cthulhu inspired scene",
+    },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const goToPrevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? slides.length - 1 : prevIndex - 1));
+  };
+
+  const goToNextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === slides.length - 1 ? 0 : prevIndex + 1));
+  };
+
   //handling folder closing
   const handleClose = () => {
     props.handleGallery();
@@ -17,8 +64,13 @@ function Gallery(props) {
           </button>
         </div>
       </nav>
-      <div className="gallery-window__images"></div>
-      <div className="gallery-window__btn-bar"></div>
+      <div className="gallery-window__images">
+        <Carousel slides={slides} currentIndex={currentIndex} />
+      </div>
+      <div className="gallery-window__btn-bar">
+        <button onClick={goToPrevSlide}>Poprzedni</button>
+        <button onClick={goToNextSlide}>Następny</button>
+      </div>
     </div>
   );
 }

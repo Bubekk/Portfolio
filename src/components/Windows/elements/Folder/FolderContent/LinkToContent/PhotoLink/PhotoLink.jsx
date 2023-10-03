@@ -1,11 +1,14 @@
 import "./PhotoLink.scss";
-import PixelOne from "../../../../../../../assets/pixelsPhoto/PixelOne.png";
+import { ImageContext } from "../../../../../../../contexts/ImageContext";
+import { useContext } from "react";
 
 function PhotoLink(props) {
+  const { pixelPhotos } = useContext(ImageContext);
+
   return (
     <button title="Double click to open photo gallery" className="photo-link" onDoubleClick={props.handleGallery}>
-      <img className="photo-link__icon" src={PixelOne} alt="pixel project photo" />
-      <p className="photo-link__file-name">{props.photoTitle}</p>
+      <img className="photo-link__icon" src={pixelPhotos[props.pixelName]} alt="pixel project photo" />
+      <p className="photo-link__file-name">{props.pixelName}.png</p>
     </button>
   );
 }

@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./App.css";
+import { ImageContextProvider } from "./contexts/ImageContext";
 import CodeEditor from "./components/CodeEditor/CodeEditor";
 import Windows from "./components/Windows/Windows";
 import LogOff from "./components/LogOff/LogOff";
@@ -33,21 +34,23 @@ function App() {
   };
 
   return (
-    <div className="main">
-      <LogOff
-        logOff={logOff}
-        shutDown={shutDown}
-        handleBackToWindows={handleBackToWindows}
-        style={{ display: logOff || shutDown ? "block" : "none" }}
-      />
-      <Windows
-        handleLogOff={handleLogOff}
-        handleShutDown={handleShutDown}
-        handleCodeEditorLink={handleCodeEditorLink}
-        style={{ display: isWindowsVisible ? "block" : "none" }}
-      />
-      <CodeEditor handleCodeEditorLink={handleCodeEditorLink} style={{ display: isCodeVisible ? "block" : "none" }} />
-    </div>
+    <ImageContextProvider>
+      <div className="main">
+        <LogOff
+          logOff={logOff}
+          shutDown={shutDown}
+          handleBackToWindows={handleBackToWindows}
+          style={{ display: logOff || shutDown ? "block" : "none" }}
+        />
+        <Windows
+          handleLogOff={handleLogOff}
+          handleShutDown={handleShutDown}
+          handleCodeEditorLink={handleCodeEditorLink}
+          style={{ display: isWindowsVisible ? "block" : "none" }}
+        />
+        <CodeEditor handleCodeEditorLink={handleCodeEditorLink} style={{ display: isCodeVisible ? "block" : "none" }} />
+      </div>
+    </ImageContextProvider>
   );
 }
 

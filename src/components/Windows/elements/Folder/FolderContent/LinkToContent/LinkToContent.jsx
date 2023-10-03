@@ -20,7 +20,13 @@ function LinkToContent(props) {
       )}
       {props.projects.pixel1 && (
         <div className="linkto">
-          <PhotoLink photoTitle="FirstOne.png" pixelName="PixelOne" handleGallery={props.handleGallery} />
+          <PhotoLink pixelName="Blockhouse" handleGallery={props.handleGallery} />
+          <PhotoLink pixelName="Ecto1" handleGallery={props.handleGallery} />
+          <PhotoLink pixelName="Farmer" handleGallery={props.handleGallery} />
+          <PhotoLink pixelName="RedSnow" handleGallery={props.handleGallery} />
+          <PhotoLink pixelName="SeaHouse" handleGallery={props.handleGallery} />
+          <PhotoLink pixelName="EmberSwords" handleGallery={props.handleGallery} />
+          <PhotoLink pixelName="OldResume" handleGallery={props.handleGallery} />
         </div>
       )}
       {props.projects.pixel2 && <p>Hi im inner pixel2</p>}
