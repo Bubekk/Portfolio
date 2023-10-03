@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { ImageContext } from "../../../../contexts/ImageContext";
 import Slide from "./Slide";
 
 const Carousel = ({ slides, currentIndex }) => {

@@ -2,12 +2,11 @@ import "./Gallery.scss";
 import { useContext, useState } from "react";
 import Carousel from "./Carousel";
 import { ImageContext } from "../../../../contexts/ImageContext";
-// import PixelOne from "../../../../assets/pixelsPhoto/PixelOne.png";
-// import PixelTwo from "../../../../assets/pixelsPhoto/PixelTwo.png";
 
 function Gallery(props) {
   const { pixelPhotos } = useContext(ImageContext);
 
+  //setting photos to object array, just for mapping in gallery
   const slides = [
     {
       imageSrc: pixelPhotos["Blockhouse"],
@@ -41,10 +40,12 @@ function Gallery(props) {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  //handling carousel back btn
   const goToPrevSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? slides.length - 1 : prevIndex - 1));
   };
 
+  //handling carousel next btn
   const goToNextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex === slides.length - 1 ? 0 : prevIndex + 1));
   };
@@ -68,8 +69,8 @@ function Gallery(props) {
         <Carousel slides={slides} currentIndex={currentIndex} />
       </div>
       <div className="gallery-window__btn-bar">
-        <button onClick={goToPrevSlide}>Poprzedni</button>
-        <button onClick={goToNextSlide}>Następny</button>
+        <button onClick={goToPrevSlide}>Previous</button>
+        <button onClick={goToNextSlide}>Next</button>
       </div>
     </div>
   );

@@ -107,6 +107,7 @@ const ImageContextProvider = ({ children }) => {
     resume: Resume,
   };
 
+  //setting one value to make import easier
   const imageContextValues = {
     btnsIcon,
     icons,

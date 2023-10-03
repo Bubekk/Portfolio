@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import { ImageContextProvider } from "./contexts/ImageContext";
 import CodeEditor from "./components/CodeEditor/CodeEditor";
