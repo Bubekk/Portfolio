@@ -1,8 +1,10 @@
 import "./startButton.scss";
-import CalcIcon from "../../../../../assets/icons/calc.jpg";
-import MineSweeperIcon from "../../../../../assets/icons/minesweeper.png";
+import { useContext } from "react";
+import { ImageContext } from "../../../../../contexts/ImageContext";
 
 function StartButton(props) {
+  const { icons } = useContext(ImageContext);
+
   const handleClick = () => {
     if (props.type === "calc") {
       props.handleCalculator();
@@ -11,7 +13,8 @@ function StartButton(props) {
     }
   };
 
-  const iconSrc = props.icon == "calc" ? CalcIcon : MineSweeperIcon;
+  const iconSrc = props.icon == "calc" ? icons["calcIcon"] : icons["minesweeperIcon"];
+
   return (
     <button className="start-btn" onClick={handleClick}>
       <img className="start-btn__icon" src={iconSrc} alt="calculator icon" />

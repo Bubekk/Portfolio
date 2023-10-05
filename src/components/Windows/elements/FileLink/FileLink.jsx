@@ -1,12 +1,19 @@
 import "./fileLink.scss";
-import PdfIcon from "../../../../assets/icons/pdf-icon.png";
-import CodeIcon from "../../../../assets/icons/code-icon.png";
-import FolderIcon from "../../../../assets/icons/folder-icon.png";
-import ProjectIcon from "../../../../assets/icons/project-icon.png";
+import { useContext } from "react";
+import { ImageContext } from "../../../../contexts/ImageContext";
 
 function FileLink(props) {
+  const { icons } = useContext(ImageContext);
+
   //Dynamic seting of folder icon by prop type
-  const iconSrc = props.type === "pdf" ? PdfIcon : props.type === "code" ? CodeIcon : props.type === "folder" ? FolderIcon : ProjectIcon;
+  const iconSrc =
+    props.type === "pdf"
+      ? icons["pdfIcon"]
+      : props.type === "code"
+      ? icons["codeIcon"]
+      : props.type === "folder"
+      ? icons["folderIcon"]
+      : icons["projectIcon"];
 
   //handling icon double click that opens proper folder selecting it by prop type. When any of type is ok it goes to another function
   const handleBtn = () => {

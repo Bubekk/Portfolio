@@ -15,7 +15,7 @@ function PixelContent(props) {
         />
         <FileLink type="pixelFolder" linkto="pixel2" alt="link to Pixel folder and folder icon" fileName="Pixel Gifs" showPixel={props.showPixel} />
       </div>
-      <div className="project__project-content">
+      <div className="pixel__pixel-content">
         <LinkToContent
           style={{ display: props.projects.pixel1 || props.projects.pixel2 ? "flex" : "none", color: "black" }}
           projects={props.projects}

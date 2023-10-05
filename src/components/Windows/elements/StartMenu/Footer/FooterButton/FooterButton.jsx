@@ -1,9 +1,11 @@
 import "./footerButton.scss";
-import LogOff from "../../../../../../assets/icons/logoff.png";
-import ShutDown from "../../../../../../assets/icons/shutdown.png";
+import { useContext } from "react";
+import { ImageContext } from "../../../../../../contexts/ImageContext";
 
 function FooterButton(props) {
-  const iconSrc = props.icon == "logoff" ? LogOff : ShutDown;
+  const { icons } = useContext(ImageContext);
+
+  const iconSrc = props.icon == "logoff" ? icons["logoffIcon"] : icons["shutdownIcon"];
 
   const handleClickFunction = () => {
     if (props.btnType == "logoff") {

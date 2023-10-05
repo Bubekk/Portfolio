@@ -1,14 +1,16 @@
 import "./startMenu.scss";
+import { useContext } from "react";
+import { ImageContext } from "../../../../contexts/ImageContext";
 import StartButton from "./Button/StartButton";
-import Avatar from "../../../../assets/icons/avatar.png";
 import Footer from "./Footer/Footer";
 
 function StartMenu(props) {
+  const { icons } = useContext(ImageContext);
   return (
     <div className="start-menu" style={props.style}>
       <nav className="start-menu__nav">
         <div className="start-menu__nav__avatar">
-          <img src={Avatar} alt="" />
+          <img src={icons["avatar"]} alt="" />
         </div>
         <p className="start-menu__nav__username">User</p>
       </nav>

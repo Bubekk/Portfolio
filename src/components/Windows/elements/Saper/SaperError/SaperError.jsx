@@ -1,7 +1,10 @@
 import "./SaperError.scss";
-import ErrorIcon from "../../../../../assets/icons/error.png";
+import { useContext } from "react";
+import { ImageContext } from "../../../../../contexts/ImageContext";
 
 function SaperError(props) {
+  const { icons } = useContext(ImageContext);
+
   const handleClick = () => {
     props.handleSaper();
   };
@@ -15,7 +18,7 @@ function SaperError(props) {
         </button>
       </nav>
       <div className="saper-error__content">
-        <img src={ErrorIcon} alt="error icon" />
+        <img src={icons["errorIcon"]} alt="error icon" />
         <p className="saper-error__content__text">Sorry! Minesweeper doesn't work! (yet)</p>
         <button className="saper-error__ok-btn" onClick={handleClick}>
           Ok!

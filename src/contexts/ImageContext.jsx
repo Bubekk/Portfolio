@@ -10,23 +10,25 @@ import NextIcon from "../assets/icons/next.png";
 import Avatar from "../assets/icons/avatar.png";
 import CalcIcon from "../assets/icons/calc.jpg";
 import CodeIcon from "../assets/icons/code-icon.png";
-import CssIcon from "../assets/icons/css.svg";
 import ErrorIcon from "../assets/icons/error.png";
 import ExpolrerIcon from "../assets/icons/explorer-icon.png";
-import FigmaIcon from "../assets/icons/figma.png";
 import FolderIcon from "../assets/icons/folder-icon.png";
 import GitIcon from "../assets/icons/git-icon.png";
-import HtmlIcon from "../assets/icons/html.svg";
-import IllustratorIcon from "../assets/icons/illustrator.png";
-import JsIcon from "../assets/icons/js.svg";
 import LogoffIcon from "../assets/icons/logoff.png";
 import MinesweeperIcon from "../assets/icons/minesweeper.png";
 import PdfIcon from "../assets/icons/pdf-icon.png";
-import PhotoshopIcon from "../assets/icons/photoshop.png";
 import ProjectIcon from "../assets/icons/project-icon.png";
+import ShutdownIcon from "../assets/icons/shutdown.png";
+
+//skills icons imports
+import CssIcon from "../assets/icons/css.svg";
+import FigmaIcon from "../assets/icons/figma.png";
+import HtmlIcon from "../assets/icons/html.svg";
+import IllustratorIcon from "../assets/icons/illustrator.png";
+import JsIcon from "../assets/icons/js.svg";
+import PhotoshopIcon from "../assets/icons/photoshop.png";
 import PythonIcon from "../assets/icons/python.svg";
 import ReactIcon from "../assets/icons/react.svg";
-import ShutdownIcon from "../assets/icons/shutdown.png";
 import VueIcon from "../assets/icons/vue.svg";
 
 //Pixel photos imports
@@ -39,9 +41,6 @@ import p6 from "../assets/pixelsPhoto/redSnow.png";
 import p7 from "../assets/pixelsPhoto/seaHouse.png";
 
 //Pixel gifs imports
-
-//Wallpaper import
-import Wallpaper from "../assets/wallpaper/windowsXp.jpg";
 
 //Window image import
 import Window from "../assets/window/window.png";
@@ -63,23 +62,26 @@ const ImageContextProvider = ({ children }) => {
     avatar: Avatar,
     calcIcon: CalcIcon,
     codeIcon: CodeIcon,
-    cssIcon: CssIcon,
     errorIcon: ErrorIcon,
     explorerIcon: ExpolrerIcon,
-    figmaIcon: FigmaIcon,
     folderIcon: FolderIcon,
     gitIcon: GitIcon,
-    htmlIcon: HtmlIcon,
-    illustratorIcon: IllustratorIcon,
-    jsIcon: JsIcon,
     logoffIcon: LogoffIcon,
     minesweeperIcon: MinesweeperIcon,
     pdfIcon: PdfIcon,
-    photoshopIcon: PhotoshopIcon,
     projectIcon: ProjectIcon,
+    shutdownIcon: ShutdownIcon,
+  };
+
+  const skillsIcons = {
+    cssIcon: CssIcon,
+    figmaIcon: FigmaIcon,
+    htmlIcon: HtmlIcon,
+    illustratorIcon: IllustratorIcon,
+    jsIcon: JsIcon,
+    photoshopIcon: PhotoshopIcon,
     pythonIcon: PythonIcon,
     reactIcon: ReactIcon,
-    shutdownIcon: ShutdownIcon,
     vueIcon: VueIcon,
   };
 
@@ -95,10 +97,6 @@ const ImageContextProvider = ({ children }) => {
 
   const pixelGifs = {};
 
-  const wallpaper = {
-    wallpaper: Wallpaper,
-  };
-
   const window = {
     window: Window,
   };
@@ -111,9 +109,9 @@ const ImageContextProvider = ({ children }) => {
   const imageContextValues = {
     btnsIcon,
     icons,
+    skillsIcons,
     pixelPhotos,
     pixelGifs,
-    wallpaper,
     window,
     resume,
   };

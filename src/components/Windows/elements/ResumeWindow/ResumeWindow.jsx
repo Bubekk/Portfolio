@@ -1,8 +1,11 @@
 import "./resumeWindow.scss";
-import cv from "../../../../assets/resume/cv.png";
+import { useContext } from "react";
+import { ImageContext } from "../../../../contexts/ImageContext";
 import pdfCv from "/CV.pdf";
 
 function ResumeWindow(props) {
+  const { resume } = useContext(ImageContext);
+
   //handling download resume.pdf btn
   const handleDownload = () => {
     const link = document.createElement("a");
@@ -11,7 +14,6 @@ function ResumeWindow(props) {
     link.target = "_blank";
     link.rel = "noreferrer";
     link.click();
-    console.log(link);
   };
 
   //handling folder closing
@@ -33,7 +35,7 @@ function ResumeWindow(props) {
         </div>
       </nav>
       <div className="pdf-window__resume">
-        <img src={cv} alt="" />
+        <img src={resume["resume"]} alt="" />
       </div>
     </div>
   );

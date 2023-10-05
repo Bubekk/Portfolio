@@ -1,10 +1,10 @@
 import "./UpperBar.scss";
-import BackIcon from "../../../../../assets/icons/back.png";
-import NextIcon from "../../../../../assets/icons/next.png";
-import BackBwIcon from "../../../../../assets/icons/back_bw.png";
-import NextBwIcon from "../../../../../assets/icons/next_bw.png";
+import { useContext } from "react";
+import { ImageContext } from "../../../../../contexts/ImageContext";
 
 function UpperBar(props) {
+  const { btnsIcon } = useContext(ImageContext);
+
   //handling nav back btn
   const handleBack = () => {
     props.backInFolder();
@@ -27,8 +27,8 @@ function UpperBar(props) {
           className="icon icon--back"
           src={
             props.projects.project1 || props.projects.project2 || props.pixels.pixel1 || props.pixels.pixel2 || props.pixels.pixel3
-              ? BackIcon
-              : BackBwIcon
+              ? btnsIcon["backBtn"]
+              : btnsIcon["backBwBtn"]
           }
           alt="Back Button Icon"
         />
@@ -40,8 +40,8 @@ function UpperBar(props) {
           className="icon icon--next"
           src={
             props.projects.project1 || props.projects.project2 || props.pixels.pixel1 || props.pixels.pixel2 || props.pixels.pixel3
-              ? NextBwIcon
-              : NextIcon
+              ? btnsIcon["nextBwIcon"]
+              : btnsIcon["nextBtn"]
           }
           alt="Next Button Icon"
         />

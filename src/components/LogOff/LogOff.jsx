@@ -1,8 +1,10 @@
 import "./logOff.scss";
-import { useRef, useEffect } from "react";
-import Window from "../../assets/window/window.png";
+import { useRef, useEffect, useContext } from "react";
+import { ImageContext } from "../../contexts/ImageContext";
 
 function LogOff(props) {
+  const { window } = useContext(ImageContext);
+
   const textRef = useRef(null);
   const initialText = `${props.logOff ? "Logging Off..." : "Turning Your Computer Down..."}`;
 
@@ -36,7 +38,11 @@ function LogOff(props) {
     <div className="logoff-screen" style={props.style}>
       <div className="logoff-screen__top-bar"></div>
       <div className="logoff-screen__middle-bar">
-        <img className="logoff-screen__middle-bar__img" src={Window} alt="temporary window logo, till i can't get something even funnier..." />
+        <img
+          className="logoff-screen__middle-bar__img"
+          src={window["window"]}
+          alt="temporary window logo, till i can't get something even funnier..."
+        />
         <p className="logoff-screen__middle-bar__text" ref={textRef}>
           {initialText}
         </p>

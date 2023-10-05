@@ -1,6 +1,9 @@
 .linkto {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  gap: 0 15px;
+
   &__links {
     width: 100%;
     display: flex;
