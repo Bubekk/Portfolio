@@ -21,7 +21,6 @@ function Folder(props) {
   const [pixels, setPixels] = useState({
     pixel1: false,
     pixel2: false,
-    pixel3: false,
   });
 
   //state of last opened project
@@ -45,8 +44,6 @@ function Folder(props) {
       setLastPixel(1);
     } else if (pixels.pixel2) {
       setLastPixel(2);
-    } else if (pixels.pixel3) {
-      setLastPixel(3);
     }
   }, [pixels]);
 
@@ -75,7 +72,6 @@ function Folder(props) {
     setPixels({
       pixel1: false,
       pixel2: false,
-      pixel3: false,
     });
   };
 

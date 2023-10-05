@@ -40,7 +40,21 @@ import p5 from "../assets/pixelsPhoto/oldResume.png";
 import p6 from "../assets/pixelsPhoto/redSnow.png";
 import p7 from "../assets/pixelsPhoto/seaHouse.png";
 
-//Pixel gifs imports
+//Pixel miniature pngs imports
+import gp1 from "../assets/pixelsPhoto/bear_min.png";
+import gp2 from "../assets/pixelsPhoto/breakingbad_min.png";
+import gp3 from "../assets/pixelsPhoto/gameroom_min.png";
+import gp4 from "../assets/pixelsPhoto/pikachu_min.png";
+import gp5 from "../assets/pixelsPhoto/street_min.png";
+import gp6 from "../assets/pixelsPhoto/toad_min.png";
+
+//Gifs imports
+import g1 from "../assets/gifs/bear.gif";
+import g2 from "../assets/gifs/breakingbad.gif";
+import g3 from "../assets/gifs/gameroom.gif";
+import g4 from "../assets/gifs/pikachu.gif";
+import g5 from "../assets/gifs/street.gif";
+import g6 from "../assets/gifs/toad.gif";
 
 //Window image import
 import Window from "../assets/window/window.png";
@@ -86,16 +100,29 @@ const ImageContextProvider = ({ children }) => {
   };
 
   const pixelPhotos = {
-    Blockhouse: p1,
-    Ecto1: p2,
-    EmberSwords: p3,
-    Farmer: p4,
-    OldResume: p5,
-    RedSnow: p6,
-    SeaHouse: p7,
+    blockhouse: p1,
+    ecto1: p2,
+    emberSwords: p3,
+    farmer: p4,
+    oldResume: p5,
+    redSnow: p6,
+    seaHouse: p7,
+    bearMin: gp1,
+    breakingbadMin: gp2,
+    gameroomMin: gp3,
+    pikachuMin: gp4,
+    streetMin: gp5,
+    toadMin: gp6,
   };
 
-  const pixelGifs = {};
+  const pixelGifs = {
+    bear: g1,
+    breakingBad: g2,
+    gameRoom: g3,
+    pikachu: g4,
+    street: g5,
+    toad: g6,
+  };
 
   const window = {
     window: Window,

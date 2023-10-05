@@ -20,16 +20,25 @@ function LinkToContent(props) {
       )}
       {props.projects.pixel1 && (
         <div className="linkto">
-          <PhotoLink pixelName="Blockhouse" handleGallery={props.handleGallery} />
-          <PhotoLink pixelName="Ecto1" handleGallery={props.handleGallery} />
-          <PhotoLink pixelName="Farmer" handleGallery={props.handleGallery} />
-          <PhotoLink pixelName="RedSnow" handleGallery={props.handleGallery} />
-          <PhotoLink pixelName="SeaHouse" handleGallery={props.handleGallery} />
-          <PhotoLink pixelName="EmberSwords" handleGallery={props.handleGallery} />
-          <PhotoLink pixelName="OldResume" handleGallery={props.handleGallery} />
+          <PhotoLink pixelName="blockhouse" handleGallery={props.handleGallery} type="static" id={0} />
+          <PhotoLink pixelName="ecto1" handleGallery={props.handleGallery} type="static" id={1} />
+          <PhotoLink pixelName="emberSwords" handleGallery={props.handleGallery} type="static" id={2} />
+          <PhotoLink pixelName="farmer" handleGallery={props.handleGallery} type="static" id={3} />
+          <PhotoLink pixelName="oldResume" handleGallery={props.handleGallery} type="static" id={4} />
+          <PhotoLink pixelName="redSnow" handleGallery={props.handleGallery} type="static" id={5} />
+          <PhotoLink pixelName="seaHouse" handleGallery={props.handleGallery} type="static" id={6} />
         </div>
       )}
-      {props.projects.pixel2 && <p>Hi im inner pixel2</p>}
+      {props.projects.pixel2 && (
+        <div className="linkto">
+          <PhotoLink pixelName="bearMin" handleGallery={props.handleGallery} type="gif" id={0} />
+          <PhotoLink pixelName="breakingbadMin" handleGallery={props.handleGallery} type="gif" id={1} />
+          <PhotoLink pixelName="gameroomMin" handleGallery={props.handleGallery} type="gif" id={2} />
+          <PhotoLink pixelName="pikachuMin" handleGallery={props.handleGallery} type="gif" id={3} />
+          <PhotoLink pixelName="streetMin" handleGallery={props.handleGallery} type="gif" id={4} />
+          <PhotoLink pixelName="toadMin" handleGallery={props.handleGallery} type="gif" id={5} />
+        </div>
+      )}
     </div>
   );
 }

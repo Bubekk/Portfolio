@@ -20,6 +20,8 @@ function Windows(props) {
   const [isFolderPixelVisible, setIsFolderPixelVisible] = useState(false);
   const [isGalleryVisible, setIsGalleryVisible] = useState(false);
   const [isStartVisible, setIsStartVisible] = useState(false);
+  const [whichPixel, setWhichPixel] = useState("");
+  const [pixelId, setPixelId] = useState(0);
 
   //handling calculator window opening
   const handleCalculator = () => {
@@ -39,8 +41,10 @@ function Windows(props) {
   };
 
   //handling gallery window opening
-  const handleGalleryLink = () => {
+  const handleGalleryLink = (arg, id) => {
     setIsGalleryVisible(!isGalleryVisible);
+    setWhichPixel(arg);
+    setPixelId(id);
   };
 
   //handling start menu opening
@@ -86,7 +90,12 @@ function Windows(props) {
         />
         <ResumeWindow handleResumeLink={handleResumeLink} style={{ display: isResumeVisible ? "block" : "none" }} />
         <Calculator handleCalculator={handleCalculator} style={{ display: isCalcVisible ? "block" : "none" }} />
-        <Gallery handleGallery={handleGalleryLink} style={{ display: isGalleryVisible ? "block" : "none", top: "10px", left: "700px" }} />
+        <Gallery
+          handleGallery={handleGalleryLink}
+          whichPixel={whichPixel}
+          pixelId={pixelId}
+          style={{ display: isGalleryVisible ? "block" : "none", top: "10px", left: "700px" }}
+        />
         {/* Minesweeper/Saper is not ready yet! */}
         {/* <Saper handleSaper={handleSaper} style={{ display: isSaperVisible ? "block" : "none" }} /> */}
         <SaperError handleSaper={handleSaper} style={{ display: isSaperErrorVisible ? "block" : "none" }} />
