@@ -7,9 +7,9 @@ function StartButton(props) {
 
   const handleClick = () => {
     if (props.type === "calc") {
-      props.handleCalculator("isCalcVisible");
+      props.handleCalculator("Calculator");
     } else {
-      props.handleSaper("isSaperErrorVisible");
+      props.handleSaper("SaperError");
     }
   };
 

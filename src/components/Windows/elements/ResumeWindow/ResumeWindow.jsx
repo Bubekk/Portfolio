@@ -18,7 +18,7 @@ function ResumeWindow(props) {
 
   //handling folder closing
   const handleClose = () => {
-    props.handleResumeLink("isResumeVisible");
+    props.handleResumeLink("Resume");
   };
 
   return (

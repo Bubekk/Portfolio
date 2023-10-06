@@ -27,6 +27,8 @@
     width: 100%;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
+    gap: 0 2px;
     padding-left: 15px;
   }
   &__clock {

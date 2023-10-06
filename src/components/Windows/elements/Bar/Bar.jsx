@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./bar.scss";
+import "./Bar.scss";
 import WindowBtn from "./WindowBtn/WindowBtn";
 
 function Bar(props) {
@@ -37,7 +37,19 @@ function Bar(props) {
       <button className="bar__start" onClick={handleStartClick}>
         <p className="bar__start__text">Start</p>
       </button>
-      <div className="bar__windows-btn"></div>
+      <div className="bar__windows-btn">
+        {Object.keys(props.isVisible).map((key) => {
+          return (
+            <WindowBtn
+              handleActiveWindow={props.handleActiveWindow}
+              key={key}
+              isVisible={props.isVisible[key]}
+              propertyName={key}
+              style={{ display: props.isVisible[key] ? "block" : "none" }}
+            />
+          );
+        })}
+      </div>
       <div className="bar__clock">
         <p className="bar__clock__text bar__clock__text--hour">{formatTime(time.hour)}</p>
         <p className="bar__clock__text bar__clock__text--colon">:</p>

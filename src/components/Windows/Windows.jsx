@@ -13,20 +13,20 @@ import { useState } from "react";
 
 function Windows(props) {
   const [isVisible, setIsVisible] = useState({
-    isResumeVisible: false,
-    isCalcVisible: false,
-    isSaperErrorVisible: false,
+    Resume: false,
+    Calculator: false,
+    SaperError: false,
     // isSaperVisible: false,
-    isFolderProjectVisible: false,
-    isFolderPixelVisible: false,
-    isGalleryVisible: false,
+    Projects: false,
+    Pixels: false,
+    Gallery: false,
   });
 
   const [activeWindow, setActiveWindow] = useState({
     resume: false,
     projects: false,
     pixelArt: false,
-    gallery: false,
+    gallery: true,
     calc: false,
   });
 
@@ -66,7 +66,7 @@ function Windows(props) {
   const handleGalleryLink = (arg, id) => {
     setIsVisible((prevIsVisible) => ({
       ...prevIsVisible,
-      isGalleryVisible: true,
+      Gallery: true,
     }));
     setWhichPixel(arg);
     setPixelId(id);
@@ -101,7 +101,7 @@ function Windows(props) {
           type="projects"
           fileName="Projects"
           handleFolder={handleCloseVisible}
-          style={{ display: isVisible["isFolderProjectVisible"] ? "block" : "none", zIndex: activeWindow["projects"] ? "2" : "0" }}
+          style={{ display: isVisible["Projects"] ? "block" : "none", zIndex: activeWindow["projects"] ? "2" : "0" }}
           handleActiveWindow={handleActiveWindow}
         />
         <Folder
@@ -109,7 +109,7 @@ function Windows(props) {
           fileName="Pixelart"
           handleFolder={handleCloseVisible}
           style={{
-            display: isVisible["isFolderPixelVisible"] ? "block" : "none",
+            display: isVisible["Pixels"] ? "block" : "none",
             top: "100px",
             left: "480px",
             zIndex: activeWindow["pixelArt"] ? "2" : "0",
@@ -120,14 +120,14 @@ function Windows(props) {
         <ResumeWindow
           type="resume"
           handleResumeLink={handleCloseVisible}
-          style={{ display: isVisible["isResumeVisible"] ? "block" : "none", zIndex: activeWindow["resume"] ? "2" : "0" }}
+          style={{ display: isVisible["Resume"] ? "block" : "none", zIndex: activeWindow["resume"] ? "2" : "0" }}
           handleActiveWindow={handleActiveWindow}
         />
         <Calculator
           type="calc"
           // handleCalculator={handleCalculator}
           handleCalculator={handleCloseVisible}
-          style={{ display: isVisible["isCalcVisible"] ? "block" : "none", zIndex: activeWindow["calc"] ? "3" : "0" }}
+          style={{ display: isVisible["Calculator"] ? "block" : "none", zIndex: activeWindow["calc"] ? "3" : "0" }}
           handleActiveWindow={handleActiveWindow}
         />
         <Gallery
@@ -136,7 +136,7 @@ function Windows(props) {
           whichPixel={whichPixel}
           pixelId={pixelId}
           style={{
-            display: isVisible["isGalleryVisible"] ? "block" : "none",
+            display: isVisible["Gallery"] ? "block" : "none",
             top: "10px",
             left: "700px",
             zIndex: activeWindow["gallery"] ? "2" : "0",
@@ -145,7 +145,7 @@ function Windows(props) {
         />
         {/* Minesweeper/Saper is not ready yet! */}
         {/* <Saper handleSaper={handleSaper} style={{ display: isSaperVisible ? "block" : "none" }} /> */}
-        <SaperError handleSaper={handleCloseVisible} style={{ display: isVisible["isSaperErrorVisible"] ? "block" : "none" }} />
+        <SaperError handleSaper={handleCloseVisible} style={{ display: isVisible["SaperError"] ? "block" : "none" }} />
 
         <StartMenu
           style={{ display: isStartVisible ? "block" : "none" }}
@@ -157,7 +157,7 @@ function Windows(props) {
           handleSaper={handleOpenVisible}
         />
       </div>
-      <Bar handleStartMenuBtn={handleStartMenuBtn} />
+      <Bar handleStartMenuBtn={handleStartMenuBtn} isVisible={isVisible} handleActiveWindow={handleActiveWindow} />
     </div>
   );
 }

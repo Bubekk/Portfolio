@@ -1,0 +1,15 @@
+@use "../../../../../style/wincolors";
+
+.windowBtn {
+  height: 95%;
+  width: 70px;
+  background: wincolors.$win-bar-gradient-lightblue-bar;
+  border: none;
+  border-radius: 5px;
+  &:hover {
+    background: wincolors.$win-bar-gradient-lightblue;
+  }
+  &:active {
+    background: wincolors.$win-bar-gradient-blue-bar-clicked;
+  }
+}

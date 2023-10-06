@@ -8,9 +8,9 @@ function Folder(props) {
   //Handling Close btn of whole folder and using backInFolder function to set all states to false
   const handleClose = () => {
     if (props.type === "projects") {
-      props.handleFolder("isFolderProjectVisible");
+      props.handleFolder("Projects");
     } else {
-      props.handleFolder("isFolderPixelVisible");
+      props.handleFolder("Pixels");
     }
     backInFolder();
   };

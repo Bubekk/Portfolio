@@ -6,7 +6,7 @@ function SaperError(props) {
   const { icons } = useContext(ImageContext);
 
   const handleClick = () => {
-    props.handleSaper("isSaperErrorVisible");
+    props.handleSaper("SaperError");
   };
 
   return (
