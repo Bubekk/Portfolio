@@ -7,7 +7,11 @@ import UpperBar from "./UpperBar/UpperBar";
 function Folder(props) {
   //Handling Close btn of whole folder and using backInFolder function to set all states to false
   const handleClose = () => {
-    props.handleFolder();
+    if (props.type === "projects") {
+      props.handleFolder("isFolderProjectVisible");
+    } else {
+      props.handleFolder("isFolderPixelVisible");
+    }
     backInFolder();
   };
 

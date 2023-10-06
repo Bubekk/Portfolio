@@ -19,11 +19,13 @@ function FileLink(props) {
   const handleBtn = () => {
     const link =
       props.type === "pdf"
-        ? props.handleResumeLink()
+        ? props.handleResumeLink("isResumeVisible")
         : props.type === "code"
         ? props.handleCodeEditorLink()
-        : props.type === "folder"
-        ? props.handleFolder()
+        : props.type === "folder" && props.fileName === "Projects"
+        ? props.handleFolder("isFolderProjectVisible")
+        : props.type === "folder" && props.fileName === "Pixelart"
+        ? props.handleFolder("isFolderPixelVisible")
         : handleLink();
   };
 

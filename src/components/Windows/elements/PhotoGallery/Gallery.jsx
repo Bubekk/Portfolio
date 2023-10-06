@@ -91,7 +91,7 @@ function Gallery(props) {
 
   //handling folder closing
   const handleClose = () => {
-    props.handleGallery();
+    props.handleGallery("isGalleryVisible");
     setCurrentIndex(0);
   };
 

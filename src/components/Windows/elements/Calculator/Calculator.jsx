@@ -53,7 +53,7 @@ function Calculator(props) {
   }, [result]);
 
   const handleCalcClose = () => {
-    props.handleCalculator();
+    props.handleCalculator("isCalcVisible");
     setCalcInput("0");
     setCalcValue([]);
   };
