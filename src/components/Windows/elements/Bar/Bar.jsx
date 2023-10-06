@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./bar.scss";
+import WindowBtn from "./WindowBtn/WindowBtn";
 
 function Bar(props) {
   const [time, setTime] = useState({
@@ -36,6 +37,7 @@ function Bar(props) {
       <button className="bar__start" onClick={handleStartClick}>
         <p className="bar__start__text">Start</p>
       </button>
+      <div className="bar__windows-btn"></div>
       <div className="bar__clock">
         <p className="bar__clock__text bar__clock__text--hour">{formatTime(time.hour)}</p>
         <p className="bar__clock__text bar__clock__text--colon">:</p>

@@ -31,12 +31,12 @@ function LinkToContent(props) {
       )}
       {props.projects.pixel2 && (
         <div className="linkto">
-          <PhotoLink pixelName="bearMin" handleGallery={props.handleGallery} type="gif" id={0} />
-          <PhotoLink pixelName="breakingbadMin" handleGallery={props.handleGallery} type="gif" id={1} />
-          <PhotoLink pixelName="gameroomMin" handleGallery={props.handleGallery} type="gif" id={2} />
-          <PhotoLink pixelName="pikachuMin" handleGallery={props.handleGallery} type="gif" id={3} />
-          <PhotoLink pixelName="streetMin" handleGallery={props.handleGallery} type="gif" id={4} />
-          <PhotoLink pixelName="toadMin" handleGallery={props.handleGallery} type="gif" id={5} />
+          <PhotoLink pixelName="bear" handleGallery={props.handleGallery} type="gif" id={0} />
+          <PhotoLink pixelName="breakingbad" handleGallery={props.handleGallery} type="gif" id={1} />
+          <PhotoLink pixelName="gameroom" handleGallery={props.handleGallery} type="gif" id={2} />
+          <PhotoLink pixelName="pikachu" handleGallery={props.handleGallery} type="gif" id={3} />
+          <PhotoLink pixelName="street" handleGallery={props.handleGallery} type="gif" id={4} />
+          <PhotoLink pixelName="toad" handleGallery={props.handleGallery} type="gif" id={5} />
         </div>
       )}
     </div>

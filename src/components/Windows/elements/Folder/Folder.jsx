@@ -76,7 +76,13 @@ function Folder(props) {
   };
 
   return (
-    <div className="folder" style={props.style}>
+    <div
+      className="folder"
+      style={props.style}
+      onClick={() => {
+        props.handleActiveWindow(props.type);
+      }}
+    >
       <nav className="folder__nav">
         <p className="folder__nav__filename">{props.fileName}</p>
         <div className="folder__nav__btns">

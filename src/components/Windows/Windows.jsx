@@ -22,10 +22,35 @@ function Windows(props) {
   const [isStartVisible, setIsStartVisible] = useState(false);
   const [whichPixel, setWhichPixel] = useState("");
   const [pixelId, setPixelId] = useState(0);
+  const [activeWindow, setActiveWindow] = useState({
+    resume: false,
+    projects: false,
+    pixelArt: false,
+    gallery: false,
+    calc: false,
+  });
+
+  const handleActiveWindow = (window) => {
+    setActiveWindow((prevActive) => {
+      const updatedActiveWindows = {};
+      for (const key in prevActive) {
+        updatedActiveWindows[key] = false;
+      }
+      updatedActiveWindows[window] = true;
+      return updatedActiveWindows;
+    });
+  };
 
   //handling calculator window opening
   const handleCalculator = () => {
     setIsCalcVisible(!isCalcVisible);
+    setActiveWindow({
+      resume: false,
+      projects: false,
+      pixelArt: false,
+      gallery: false,
+      calc: true,
+    });
   };
 
   //handling minesweeper window opening, Right now under maintance so insstead of minesweeper the error shows up
@@ -38,6 +63,13 @@ function Windows(props) {
   //handling resume window opening
   const handleResumeLink = () => {
     setIsResumeVisible(!isResumeVisible);
+    setActiveWindow({
+      resume: true,
+      projects: false,
+      pixelArt: false,
+      gallery: false,
+      calc: false,
+    });
   };
 
   //handling gallery window opening
@@ -45,6 +77,13 @@ function Windows(props) {
     setIsGalleryVisible(!isGalleryVisible);
     setWhichPixel(arg);
     setPixelId(id);
+    setActiveWindow({
+      resume: false,
+      projects: false,
+      pixelArt: false,
+      gallery: true,
+      calc: false,
+    });
   };
 
   //handling start menu opening
@@ -55,11 +94,25 @@ function Windows(props) {
   //handling projects folder opening
   const handleFolderProjects = () => {
     setIsFolderProjectVisible(!isFolderProjectVisible);
+    setActiveWindow({
+      resume: false,
+      projects: true,
+      pixelArt: false,
+      gallery: false,
+      calc: false,
+    });
   };
 
   //handling pixel folder opening
   const handleFolderPixel = () => {
     setIsFolderPixelVisible(!isFolderPixelVisible);
+    setActiveWindow({
+      resume: false,
+      projects: false,
+      pixelArt: true,
+      gallery: false,
+      calc: false,
+    });
   };
 
   return (
@@ -79,22 +132,36 @@ function Windows(props) {
           type="projects"
           fileName="Projects"
           handleFolder={handleFolderProjects}
-          style={{ display: isFolderProjectVisible ? "block" : "none" }}
+          style={{ display: isFolderProjectVisible ? "block" : "none", zIndex: activeWindow["projects"] ? "2" : "0" }}
+          handleActiveWindow={handleActiveWindow}
         />
         <Folder
           type="pixelArt"
           fileName="Pixelart"
           handleFolder={handleFolderPixel}
-          style={{ display: isFolderPixelVisible ? "block" : "none", top: "100px", left: "480px" }}
+          style={{ display: isFolderPixelVisible ? "block" : "none", top: "100px", left: "480px", zIndex: activeWindow["pixelArt"] ? "2" : "0" }}
+          handleActiveWindow={handleActiveWindow}
           handleGallery={handleGalleryLink}
         />
-        <ResumeWindow handleResumeLink={handleResumeLink} style={{ display: isResumeVisible ? "block" : "none" }} />
-        <Calculator handleCalculator={handleCalculator} style={{ display: isCalcVisible ? "block" : "none" }} />
+        <ResumeWindow
+          type="resume"
+          handleResumeLink={handleResumeLink}
+          style={{ display: isResumeVisible ? "block" : "none", zIndex: activeWindow["resume"] ? "2" : "0" }}
+          handleActiveWindow={handleActiveWindow}
+        />
+        <Calculator
+          type="calc"
+          handleCalculator={handleCalculator}
+          style={{ display: isCalcVisible ? "block" : "none", zIndex: activeWindow["calc"] ? "3" : "0" }}
+          handleActiveWindow={handleActiveWindow}
+        />
         <Gallery
+          type="gallery"
           handleGallery={handleGalleryLink}
           whichPixel={whichPixel}
           pixelId={pixelId}
-          style={{ display: isGalleryVisible ? "block" : "none", top: "10px", left: "700px" }}
+          style={{ display: isGalleryVisible ? "block" : "none", top: "10px", left: "700px", zIndex: activeWindow["gallery"] ? "2" : "0" }}
+          handleActiveWindow={handleActiveWindow}
         />
         {/* Minesweeper/Saper is not ready yet! */}
         {/* <Saper handleSaper={handleSaper} style={{ display: isSaperVisible ? "block" : "none" }} /> */}

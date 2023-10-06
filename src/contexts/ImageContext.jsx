@@ -107,12 +107,12 @@ const ImageContextProvider = ({ children }) => {
     oldResume: p5,
     redSnow: p6,
     seaHouse: p7,
-    bearMin: gp1,
-    breakingbadMin: gp2,
-    gameroomMin: gp3,
-    pikachuMin: gp4,
-    streetMin: gp5,
-    toadMin: gp6,
+    bear: gp1,
+    breakingbad: gp2,
+    gameroom: gp3,
+    pikachu: gp4,
+    street: gp5,
+    toad: gp6,
   };
 
   const pixelGifs = {

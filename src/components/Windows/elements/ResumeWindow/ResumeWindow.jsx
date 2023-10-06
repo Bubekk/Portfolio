@@ -22,7 +22,13 @@ function ResumeWindow(props) {
   };
 
   return (
-    <div className="pdf-window" style={props.style}>
+    <div
+      className="pdf-window"
+      style={props.style}
+      onClick={() => {
+        props.handleActiveWindow(props.type);
+      }}
+    >
       <nav className="pdf-window__nav">
         <p className="pdf-window__nav__filename">resume.pdf</p>
         <div className="pdf-window__nav__btns">

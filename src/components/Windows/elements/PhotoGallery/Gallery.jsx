@@ -96,7 +96,13 @@ function Gallery(props) {
   };
 
   return (
-    <div className="gallery-window" style={props.style}>
+    <div
+      className="gallery-window"
+      style={props.style}
+      onClick={() => {
+        props.handleActiveWindow(props.type);
+      }}
+    >
       <nav className="gallery-window__nav">
         <p className="gallery-window__nav__filename">Gallery</p>
         <div className="gallery-window__nav__btns">

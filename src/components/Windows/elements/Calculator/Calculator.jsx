@@ -59,7 +59,13 @@ function Calculator(props) {
   };
 
   return (
-    <div className="calculator" style={props.style}>
+    <div
+      className="calculator"
+      style={props.style}
+      onClick={() => {
+        props.handleActiveWindow(props.type);
+      }}
+    >
       <nav className="calculator__nav">
         <p className="calculator__nav__filename">Calculator</p>
         <button className="calculator__nav__btn calculator__nav__btn--close" onClick={handleCalcClose}>
