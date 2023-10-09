@@ -101,3 +101,16 @@
 .slide-inactive {
   display: none;
 }
+
+@media screen and (max-height: 800px) {
+  .gallery-window {
+    width: 55vw;
+    height: 85vh;
+  }
+  .slide {
+    img {
+      max-width: 500px;
+      max-height: 400px;
+    }
+  }
+}

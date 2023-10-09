@@ -17,3 +17,13 @@
     }
   }
 }
+
+@media screen and (max-height: 800px) {
+  .windows {
+    &__screen {
+      &__sticky-notes {
+        height: 520px;
+      }
+    }
+  }
+}
