@@ -30,6 +30,9 @@ import PhotoshopIcon from "../assets/icons/photoshop.png";
 import PythonIcon from "../assets/icons/python.svg";
 import ReactIcon from "../assets/icons/react.svg";
 import VueIcon from "../assets/icons/vue.svg";
+import MailIcon from "../assets/icons/mailIcon.png";
+import PhoneIcon from "../assets/icons/phoneIcon.png";
+import LinkedInIcon from "../assets/icons/linkedinIcon.png";
 
 //Pixel photos imports
 import p1 from "../assets/pixelsPhoto/blockhouse.png";
@@ -85,6 +88,9 @@ const ImageContextProvider = ({ children }) => {
     pdfIcon: PdfIcon,
     projectIcon: ProjectIcon,
     shutdownIcon: ShutdownIcon,
+    mailIcon: MailIcon,
+    phoneIcon: PhoneIcon,
+    linkedinIcon: LinkedInIcon,
   };
 
   const skillsIcons = {
@@ -146,3 +152,6 @@ const ImageContextProvider = ({ children }) => {
 };
 
 export { ImageContext, ImageContextProvider };
+
+// <a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by riajulislam - Flaticon</a>
+// <a href="https://www.flaticon.com/free-icons/password" title="password icons">Password icons created by Freepik - Flaticon</a> logout icon  */

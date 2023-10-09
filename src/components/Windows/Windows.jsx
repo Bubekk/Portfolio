@@ -65,7 +65,6 @@ function Windows(props) {
       updatedActiveWindows[window] = true;
       return updatedActiveWindows;
     });
-    console.log(window, activeWindow);
   };
 
   //handling gallery window opening
@@ -117,7 +116,7 @@ function Windows(props) {
           style={{
             display: isVisible["Pixels"] ? "block" : "none",
             top: "100px",
-            left: "480px",
+            left: "200px",
             zIndex: activeWindow["Pixels"] ? "2" : "0",
           }}
           handleActiveWindow={handleActiveWindow}
@@ -143,8 +142,7 @@ function Windows(props) {
           pixelId={pixelId}
           style={{
             display: isVisible["Gallery"] ? "block" : "none",
-            top: "10px",
-            left: "700px",
+
             zIndex: activeWindow["Gallery"] ? "2" : "0",
           }}
           handleActiveWindow={handleActiveWindow}
