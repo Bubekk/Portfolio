@@ -41,6 +41,7 @@ function Bar(props) {
         {Object.keys(props.isVisible).map((key) => {
           return (
             <WindowBtn
+              className={`${props.activeWindow[key] ? "active" : ""}`}
               handleActiveWindow={props.handleActiveWindow}
               key={key}
               isVisible={props.isVisible[key]}

@@ -12,6 +12,7 @@ import StartMenu from "./elements/StartMenu/StartMenu";
 import { useState } from "react";
 
 function Windows(props) {
+  //state of opened window
   const [isVisible, setIsVisible] = useState({
     Resume: false,
     Calculator: false,
@@ -22,12 +23,15 @@ function Windows(props) {
     Gallery: false,
   });
 
+  //state of active window. Not the same thing as the state above!
   const [activeWindow, setActiveWindow] = useState({
-    resume: false,
-    projects: false,
-    pixelArt: false,
-    gallery: true,
-    calc: false,
+    Resume: false,
+    Calculator: false,
+    SaperError: false,
+    // isSaperVisible: false,
+    Projects: false,
+    Pixels: false,
+    Gallery: false,
   });
 
   const [isStartVisible, setIsStartVisible] = useState(false);
@@ -40,6 +44,7 @@ function Windows(props) {
       ...prevIsVisible,
       [window]: true,
     }));
+    handleActiveWindow(window);
   };
 
   //handling closing buttons for all windows
@@ -60,6 +65,7 @@ function Windows(props) {
       updatedActiveWindows[window] = true;
       return updatedActiveWindows;
     });
+    console.log(window, activeWindow);
   };
 
   //handling gallery window opening
@@ -101,37 +107,37 @@ function Windows(props) {
           type="projects"
           fileName="Projects"
           handleFolder={handleCloseVisible}
-          style={{ display: isVisible["Projects"] ? "block" : "none", zIndex: activeWindow["projects"] ? "2" : "0" }}
+          style={{ display: isVisible["Projects"] ? "block" : "none", zIndex: activeWindow["Projects"] ? "2" : "0" }}
           handleActiveWindow={handleActiveWindow}
         />
         <Folder
           type="pixelArt"
-          fileName="Pixelart"
+          fileName="Pixels"
           handleFolder={handleCloseVisible}
           style={{
             display: isVisible["Pixels"] ? "block" : "none",
             top: "100px",
             left: "480px",
-            zIndex: activeWindow["pixelArt"] ? "2" : "0",
+            zIndex: activeWindow["Pixels"] ? "2" : "0",
           }}
           handleActiveWindow={handleActiveWindow}
           handleGallery={handleGalleryLink}
         />
         <ResumeWindow
-          type="resume"
+          type="Resume"
           handleResumeLink={handleCloseVisible}
-          style={{ display: isVisible["Resume"] ? "block" : "none", zIndex: activeWindow["resume"] ? "2" : "0" }}
+          style={{ display: isVisible["Resume"] ? "block" : "none", zIndex: activeWindow["Resume"] ? "2" : "0" }}
           handleActiveWindow={handleActiveWindow}
         />
         <Calculator
-          type="calc"
+          type="Calculator"
           // handleCalculator={handleCalculator}
           handleCalculator={handleCloseVisible}
-          style={{ display: isVisible["Calculator"] ? "block" : "none", zIndex: activeWindow["calc"] ? "3" : "0" }}
+          style={{ display: isVisible["Calculator"] ? "block" : "none", zIndex: activeWindow["Calculator"] ? "3" : "0" }}
           handleActiveWindow={handleActiveWindow}
         />
         <Gallery
-          type="gallery"
+          type="Gallery"
           handleGallery={handleCloseVisible}
           whichPixel={whichPixel}
           pixelId={pixelId}
@@ -139,7 +145,7 @@ function Windows(props) {
             display: isVisible["Gallery"] ? "block" : "none",
             top: "10px",
             left: "700px",
-            zIndex: activeWindow["gallery"] ? "2" : "0",
+            zIndex: activeWindow["Gallery"] ? "2" : "0",
           }}
           handleActiveWindow={handleActiveWindow}
         />
@@ -157,7 +163,7 @@ function Windows(props) {
           handleSaper={handleOpenVisible}
         />
       </div>
-      <Bar handleStartMenuBtn={handleStartMenuBtn} isVisible={isVisible} handleActiveWindow={handleActiveWindow} />
+      <Bar handleStartMenuBtn={handleStartMenuBtn} isVisible={isVisible} handleActiveWindow={handleActiveWindow} activeWindow={activeWindow} />
     </div>
   );
 }

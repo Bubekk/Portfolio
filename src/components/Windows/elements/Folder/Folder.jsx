@@ -84,7 +84,7 @@ function Folder(props) {
       className="folder"
       style={props.style}
       onClick={() => {
-        props.handleActiveWindow(props.type);
+        props.handleActiveWindow(props.fileName);
       }}
     >
       <nav className="folder__nav">
