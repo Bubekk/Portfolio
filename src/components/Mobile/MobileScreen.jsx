@@ -10,7 +10,7 @@ function MobileScreen(props) {
       </p>
       <p>
         If this is your first encounter with this message, as mentioned earlier, give it a shot on a PC or laptop, or hop over to this link for my
-        'professional' portfolio.
+        'professional' portfolio, which not exist yet.
       </p>
       <p>Not that it's unprofessional—it's just made with a dash of humor and mostly for kicks...</p>
       <p>
