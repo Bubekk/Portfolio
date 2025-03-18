@@ -1,3 +1,6 @@
+# Link to project
+https://sebastiankubanski-winxp-portfolio.netlify.app
+
 # Portfolio in Windows 98 Style - React Project
 
 Welcome to my portfolio project! This project is a homage to the classic Windows 98 user interface, built using React. It includes a functional calculator and a start menu, both with the retro Windows 98 look and feel.
